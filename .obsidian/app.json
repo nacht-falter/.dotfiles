@@ -1,0 +1,11 @@
+{
+  "spellcheck": false,
+  "vimMode": true,
+  "showFrontmatter": false,
+  "strictLineBreaks": false,
+  "readableLineLength": true,
+  "showIndentGuide": true,
+  "showLineNumber": true,
+  "useMarkdownLinks": true,
+  "showInlineTitle": false
+}
