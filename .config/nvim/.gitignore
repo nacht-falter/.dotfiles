@@ -1,6 +1,7 @@
 # Compiled Lua sources
 luac.out
 
+
 # luarocks build files
 *.src.rock
 *.zip
@@ -38,5 +39,6 @@ luac.out
 *.i*86
 *.x86_64
 *.hex
+
 
 plugin/packer_compiled.lua

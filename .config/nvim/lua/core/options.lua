@@ -47,8 +47,6 @@ vim.cmd([[set formatoptions-=o]])
 vim.cmd([[
 	if !exists("autocommands_loaded")
 	  let autocommands_loaded = 1
-	    autocmd BufEnter * colorscheme nightfly
-        autocmd BufEnter *.md colorscheme shine
 	    autocmd BufEnter * set nowrap
 	    autocmd BufEnter *.md set wrap
 	    autocmd BufEnter *.md set linebreak

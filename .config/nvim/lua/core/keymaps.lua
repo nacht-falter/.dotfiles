@@ -1,5 +1,5 @@
--- set leader key to space
 vim.g.mapleader = " "
+-- set leader key to space
 
 local keymap = vim.keymap -- for conciseness
 
@@ -33,8 +33,16 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 -- insert newlines without entering insert mode
-keymap.set("n", "<leader>o", "o<ESC>")
-keymap.set("n", "<leader>O", "O<ESC>")
+keymap.set("n", "<leader>n", "o<ESC>")
+keymap.set("n", "<leader>N", "O<ESC>")
+
+-- swap lines
+keymap.set("n", "<leader>j", "ddp")
+keymap.set("n", "<leader>k", "ddkP")
+
+-- jump to beginning/end of paragraph
+keymap.set("n", "<leader>0", "{w")
+keymap.set("n", "<leader>$", "}ge")
 
 ----------------------
 -- Plugin Keybinds
