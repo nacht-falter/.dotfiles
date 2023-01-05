@@ -4,20 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "f8d0d82c28759f49",
+        "id": "affd0ed770067236",
         "type": "tabs",
         "children": [
           {
-            "id": "5ba21da11ce3ec62",
+            "id": "efa44e1a9a7b360e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -88,7 +83,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +99,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,9 +120,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md"
-              }
+              "state": {}
             }
           },
           {
@@ -158,10 +149,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5ba21da11ce3ec62",
+  "active": "efa44e1a9a7b360e",
   "lastOpenFiles": [
-    "7 Stefan Prins/Spiegel.md",
     "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md",
+    "7 Stefan Prins/Spiegel.md",
     "7 Stefan Prins/Musikalisches Handeln und Ko-Präsenz.md",
     "7 Stefan Prins/Räumliche Verschränkung.md",
     "Note 1.md",
