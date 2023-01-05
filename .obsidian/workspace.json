@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "f5c399f0ec99ffd8",
+        "id": "f8d0d82c28759f49",
         "type": "tabs",
         "children": [
           {
-            "id": "7d34ee958b9e7029",
+            "id": "5ba21da11ce3ec62",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "7 Stefan Prins/Kapitel.md",
+                "file": "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -66,7 +66,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -87,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "7 Stefan Prins/Kapitel.md",
+                "file": "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "7 Stefan Prins/Kapitel.md",
+                "file": "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "7 Stefan Prins/Kapitel.md"
+                "file": "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md"
               }
             }
           },
@@ -144,7 +145,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -156,17 +158,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7d34ee958b9e7029",
+  "active": "5ba21da11ce3ec62",
   "lastOpenFiles": [
-    "Überblick.md",
-    "7 Stefan Prins/Kapitel.md",
-    "Untitled.md",
+    "7 Stefan Prins/Spiegel.md",
+    "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md",
+    "7 Stefan Prins/Musikalisches Handeln und Ko-Präsenz.md",
+    "7 Stefan Prins/Räumliche Verschränkung.md",
+    "Note 1.md",
+    "Note 2.md",
+    "7 Stefan Prins/Überblick.md",
     "Users/johannes/Nextcloud/Uni/Diss/7![](scenefour_mbext.jpg).md",
     "Users/johannes/Nextcloud/Uni/Diss/7.md",
-    "Verschränkung.md",
-    "Untitled 1.md",
-    "Reading notes/@adorno1978.md",
-    "@prins2015.md",
-    "Untitled.canvas"
+    "Verschränkung.md"
   ]
 }

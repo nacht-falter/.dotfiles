@@ -2,10 +2,13 @@
   "spellcheck": false,
   "vimMode": true,
   "showFrontmatter": false,
-  "strictLineBreaks": false,
+  "strictLineBreaks": true,
   "readableLineLength": true,
   "showIndentGuide": true,
   "showLineNumber": true,
   "useMarkdownLinks": true,
-  "showInlineTitle": false
+  "showInlineTitle": true,
+  "newFileLocation": "current",
+  "showUnsupportedFiles": false,
+  "attachmentFolderPath": "./"
 }

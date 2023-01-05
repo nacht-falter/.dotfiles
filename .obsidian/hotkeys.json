@@ -8,6 +8,15 @@
       "key": "C"
     }
   ],
+  "editor:toggle-source": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "7"
+    }
+  ],
   "app:toggle-right-sidebar": [
     {
       "modifiers": [
@@ -17,6 +26,14 @@
       "key": "L"
     }
   ],
+  "obsidian-footnotes:insert-footnote": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "`"
+    }
+  ],
   "app:toggle-left-sidebar": [
     {
       "modifiers": [
@@ -24,15 +41,6 @@
         "Shift"
       ],
       "key": "H"
-    }
-  ],
-  "editor:toggle-source": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "7"
     }
   ]
 }

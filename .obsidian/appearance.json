@@ -1,10 +1,11 @@
 {
-  "accentColor": "#f44e9d",
-  "theme": "system",
+  "accentColor": "#f74f9e",
+  "theme": "moonstone",
   "textFontFamily": "Adobe Garamond Pro",
   "translucency": false,
   "baseFontSize": 17,
   "nativeMenus": true,
   "cssTheme": "Minimal",
-  "interfaceFontFamily": ""
+  "interfaceFontFamily": "",
+  "enabledCssSnippets": []
 }

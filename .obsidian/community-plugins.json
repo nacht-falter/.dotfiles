@@ -3,5 +3,9 @@
   "obsidian-vimrc-support",
   "obsidian-smart-typography",
   "obsidian-minimal-settings",
-  "obsidian-pandoc-reference-list"
+  "obsidian-pandoc-reference-list",
+  "obsidian-style-settings",
+  "number-headings-obsidian",
+  "obsidian-footnotes",
+  "better-fn"
 ]
