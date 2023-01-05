@@ -108,7 +108,7 @@ export LC_CTYPE=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias spot='./Coding/spotify_cli/spot.sh'
+alias spot='~/Coding/spotify_cli/spot.sh'
 alias spts='open -gja /Applications/Spotify.app; spt'
 alias sine='~/.tone-generator/generator $1 $2'
 
