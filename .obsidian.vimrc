@@ -1,14 +1,26 @@
-" Have j and k navigate visual lines rather than logical ones
-nmap j gj
+map j gj
 nmap k gk
 nmap 0 g0
 nmap $ g$
 
+" unmapping space to act as leader key
+unmap <Space> 
+
+" enable line swapping
+nmap <Space>j ddp
+nmap <Space>k ddkP
+
+" jump to beginning/end of paragraph
+nmap <Space>0 {w
+nmap <Space>$ }ge
+
 " Yank to system clipboard
 set clipboard=unnamed
 
+" set jk to leave insert mode 
 imap jk <Esc>
 
+" enable vim-surround behaviour
 exmap surround_double_quotes surround " "
 exmap surround_double_guillemets surround » «
 exmap surround_single_quotes surround ' '
@@ -17,8 +29,6 @@ exmap surround_brackets surround ( )
 exmap surround_square_brackets surround [ ]
 exmap surround_curly_brackets surround { }
 exmap surround_asterisk surround * *
-
-" NOTE: must use 'map' and not 'nmap'
 nunmap s
 vunmap s
 map s" :surround_double_quotes
