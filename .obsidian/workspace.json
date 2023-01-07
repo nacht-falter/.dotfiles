@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "affd0ed770067236",
+        "id": "b198b1c9e2d32424",
         "type": "tabs",
         "children": [
           {
-            "id": "efa44e1a9a7b360e",
+            "id": "2a41ef1613b5de3d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "7 Stefan Prins/Hybride Wirklichkeiten_Immersion und Hybridität in der Musik von Stefan Prins.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -83,6 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "7 Stefan Prins/Hybride Wirklichkeiten_Immersion und Hybridität in der Musik von Stefan Prins.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,6 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "7 Stefan Prins/Hybride Wirklichkeiten_Immersion und Hybridität in der Musik von Stefan Prins.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -120,7 +127,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "7 Stefan Prins/Hybride Wirklichkeiten_Immersion und Hybridität in der Musik von Stefan Prins.md"
+              }
             }
           },
           {
@@ -149,8 +158,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "efa44e1a9a7b360e",
+  "active": "2a41ef1613b5de3d",
   "lastOpenFiles": [
+    "4 Theoriekapitel/Snippet hybridität und immersion.md",
     "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md",
     "7 Stefan Prins/Spiegel.md",
     "7 Stefan Prins/Musikalisches Handeln und Ko-Präsenz.md",
@@ -159,7 +169,6 @@
     "Note 2.md",
     "7 Stefan Prins/Überblick.md",
     "Users/johannes/Nextcloud/Uni/Diss/7![](scenefour_mbext.jpg).md",
-    "Users/johannes/Nextcloud/Uni/Diss/7.md",
-    "Verschränkung.md"
+    "Users/johannes/Nextcloud/Uni/Diss/7.md"
   ]
 }
