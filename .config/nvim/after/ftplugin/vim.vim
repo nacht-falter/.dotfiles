@@ -1,0 +1,2 @@
+" overrides settings from /usr/local/Cellar/neovim/0.8.2/share/nvim/runtime/ftplugin/vim.vim
+setlocal formatoptions-=o
