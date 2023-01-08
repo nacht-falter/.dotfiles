@@ -4,6 +4,7 @@
 
 jk -- leave insert or visual mode (== ESC)
 <C-o> -- run in insert mode to execute one command and reenter insert mode
+= -- auto aligns selected lines in visual mode
 
 ## windows
 
@@ -32,7 +33,7 @@ leader = space
 
 ## movement
 
-f<character> -- jump to next character in line
+f<character> -- jump to next <character> in line
 F<character> -- jump to previous <character> in line
 <leader>0 -- jump to beginning of paragraph
 <leader>$ -- jump to end of paragraph
@@ -141,3 +142,5 @@ sc -- surround with curly brackets
 sq -- surround with double guillemets
 sg -- surround with single guillemets
 <Cmd-^> -- enter new footnote
+<C-H> -- toggle left sidebar
+<C-L> -- toggle right sidebar
