@@ -55,7 +55,7 @@ vim.cmd([[
 	if !exists("autocommands_loaded")
 	  let autocommands_loaded = 1
 	    autocmd BufEnter * set nowrap
-	    autocmd BufEnter *.md set wrap
+   	    autocmd BufEnter *.md set wrap
 	    autocmd BufEnter *.md set linebreak
     endif
 ]])
