@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b198b1c9e2d32424",
+        "id": "61048cb24e33800f",
         "type": "tabs",
         "children": [
           {
-            "id": "2a41ef1613b5de3d",
+            "id": "911cd429ce46cf3d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -66,8 +66,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -139,9 +138,17 @@
               "type": "ReferenceListView",
               "state": {}
             }
+          },
+          {
+            "id": "6981f4bcd22839ae",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -158,8 +165,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2a41ef1613b5de3d",
+  "active": "911cd429ce46cf3d",
   "lastOpenFiles": [
+    "7 Stefan Prins/Hybride Wirklichkeiten_Immersion und Hybridität in der Musik von Stefan Prins.md",
+    "7 Stefan Prins/Untitled.md",
     "4 Theoriekapitel/Snippet hybridität und immersion.md",
     "7 Stefan Prins/Hybride Wirklichkeiten. Immersion und Hybridität in der Musik von Stefan Prins.md",
     "7 Stefan Prins/Spiegel.md",
@@ -167,8 +176,6 @@
     "7 Stefan Prins/Räumliche Verschränkung.md",
     "Note 1.md",
     "Note 2.md",
-    "7 Stefan Prins/Überblick.md",
-    "Users/johannes/Nextcloud/Uni/Diss/7![](scenefour_mbext.jpg).md",
-    "Users/johannes/Nextcloud/Uni/Diss/7.md"
+    "7 Stefan Prins/Überblick.md"
   ]
 }
