@@ -87,6 +87,8 @@ return packer.startup(function(use)
 
     use("onsails/lspkind.nvim")
 
+    use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+
     use({
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
