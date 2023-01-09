@@ -116,6 +116,8 @@ Ks -- show documentation for what is under cursor
 # tmux bindings
 <C-Space> -- prefix for tmux commands
 
+<C-r> -- search command history backwards
+<C-s> -- serach command history forwards
 <prefix>- -- split pane horizontally
 <prefix>| -- split pane vertically
 <prefix>hjkl -- resize panes
