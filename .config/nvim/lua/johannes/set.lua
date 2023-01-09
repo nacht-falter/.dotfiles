@@ -4,6 +4,9 @@ local opt = vim.opt
 -- opt.signcolumn = "yes"
 -- opt.isfname:append("@-@")
 
+-- disable mouse
+opt.mouse = ""
+
 -- let undotree handle backups
 opt.swapfile = false
 opt.backup = false
