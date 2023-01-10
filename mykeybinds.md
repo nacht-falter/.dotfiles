@@ -1,4 +1,4 @@
-# my keybindin
+# my keybindings
 ## vim
 
 ### mode specific
