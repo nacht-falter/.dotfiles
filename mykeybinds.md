@@ -41,8 +41,8 @@ F<character> -- jump to previous <character> in line
 ## windows
 
 <leader>sv -- split window vetically
-<leader>sh -- split window horizontally
 <leader>se -- make windows equal width
+<leader>sh -- split window horizontally
 <leader>sc -- close current window
 
 ## tabs
@@ -84,13 +84,18 @@ gc{motion} -- comment motion
 
 <leader>e -- toggle file explorer
 
-## telescope fuzzy search
+## telescope fuzzy finder
 
 <leader>ff -- open search mask for files within pwd
 <leader>fs -- open search mask for strings within pwd
 <leader>fc -- search for string under cursor within pwd
 <leader>fb -- list buffers
 <leader>fh -- list help tags
+
+## harpoon file navigator
+<leader>h -- open harpoon window
+<leader>a -- add current file to harpoon
+<leader>[n] -- switch to [n]th file in harpoon
 
 ## autocomplete
 
@@ -113,7 +118,7 @@ gi -- to implementation
 ]d -- jump to next diagnostic in buffer
 Ks -- show documentation for what is under cursor
 
-# tmux bindings
+## tmux bindings
 <C-Space> -- prefix for tmux commands
 
 <C-r> -- search command history backwards
@@ -135,7 +140,7 @@ Ks -- show documentation for what is under cursor
     y -- copy selected text in copy mode
     <C-c> -- exit copy mode
 
-# obsidian vim bindings
+## obsidian vim bindings
 s" -- surround with double quotation marks
 s' -- surround with single quotation marks
 sb -- surround with brackets
