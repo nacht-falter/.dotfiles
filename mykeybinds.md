@@ -1,233 +1,235 @@
-# Vim:
+# my keybindings
 
-## mode specific
+## vim
 
-jk -- leave insert or visual mode (== ESC)
+### mode specific
 
-<C-o> -- run in insert mode to execute one command and reenter insert mode
+- - jk leave insert or visual mode (== ESC)
 
-= -- auto aligns selected lines in visual mode
+- <C-o> run in insert mode to execute one command and reenter insert mode
 
-## windows
+- = auto aligns selected lines in visual mode
 
-<C-w>v -- split window vertically
+### windows
 
-<C-w>s -- split window
+- <C-w>v split window vertically
 
-<C-w>c -- close current window
+- <C-w>s split window
 
-<C-w>= -- set horizontal windows to equal size
+- <C-w>c close current window
 
-## tab
+- <C-w>= set horizontal windows to equal size
 
-:[count]tabnew -- open new tab (in positon [count])
+### tab
 
-:tabclose -- close current tab
+- :[count]tabnew open new tab (in positon [count])
 
-:tabn -- go to next tab
+- :tabclose close current tab
 
-:tabp -- go to previous tab
+- :tabn go to next tab
 
-## objects
+- :tabp go to previous tab
 
-{operation}is -- perform operation inside sentence, e.g. dis deletes a sentence but not the whitespaces around it.
+### objects
 
-{operation}as -- perform operation around sentence, e.g. dis deletes a sentence including the whitespaces around it.
+- {operation}is perform operation inside sentence, e.g. dis deletes a sentence but not the whitespaces around it.
 
-{operation}ip -- perform operation inside paragraph
+- {operation}as perform operation around sentence, e.g. dis deletes a sentence including the whitespaces around it.
 
-{operation}ap -- perform operation around paragraph
+- {operation}ip perform operation inside paragraph
 
-{operation}iw -- perform operation inside word
+- {operation}ap perform operation around paragraph
 
-{operation}aw -- perform operation around word
+- {operation}iw perform operation inside word
 
-leader = space
+- {operation}aw perform operation around word
 
-## movement
+- leader = space
 
-f<character> -- jump to next <character> in line
+### movement
 
-F<character> -- jump to previous <character> in line
+- f<character> jump to next <character> in line
 
-<leader>0 -- jump to beginning of paragraph
+- F<character> jump to previous <character> in line
 
-<leader>$ -- jump to end of paragraph
+- <leader>0 jump to beginning of paragraph
 
-## windows
+- <leader>$ jump to end of paragraph
 
-<leader>sv -- split window vetically
+### windows
 
-<leader>se -- make windows equal width
+- <leader>sv split window vetically
 
-<leader>sh -- split window horizontally
+- <leader>se make windows equal width
 
-<leader>sc -- close current window
+- <leader>sh split window horizontally
 
-## tabs
+- <leader>sc close current window
 
-<leader>to -- open new tab
+### tabs
 
-<leader>tc -- close current tab
+- <leader>to open new tab
 
-<leader>tn -- go to next tab
+- <leader>tc close current tab
 
-<leader>tp -- go to previous tab
+- <leader>tn go to next tab
 
-## lines
+- <leader>tp go to previous tab
 
-<leader>j -- swaps current line with line below
+### lines
 
-<leader>k -- swaps current line with line above
+- <leader>j swaps current line with line below
 
-<leader>n -- adds a new line below without going to insert mode
+- <leader>k swaps current line with line above
 
-<leader>N -- adds a new line above without going to insert mode
+- <leader>n adds a new line below without going to insert mode
 
-## vim-surround
+- <leader>N adds a new line above without going to insert mode
 
-ys{motion}<char> or <tag> -- surrounds the selected motion with the character. For brackets: Using the opening bracket adds a whitespace around the {motion}, using the closing bracket doesn't.
+### vim-surround
 
-ds<char> -- deletes the surrounding characters
+- ys{motion}<char> or <tag> surrounds the selected motion with the character. For brackets: Using the opening bracket adds a whitespace around the {motion}, using the closing bracket doesn't.
 
-cs<char1><char2> -- replaces surrounding character1 with character2
+- ds<char> deletes the surrounding characters
 
-cst<char> -- replace surrounding tag with character
+- cs<char1><char2> replaces surrounding character1 with character2
 
-dst -- delete surrounding tag
+- cst<char> replace surrounding tag with character
 
-## vim-tmux
+- dst delete surrounding tag
 
-<C-j> -- go to window below
+### vim-tmux
 
-<C-k> -- go to window above
+- <C-j> go to window below
 
-<C-h> -- go to window on the left
+- <C-k> go to window above
 
-<C-l> -- go to window on the right
+- <C-h> go to window on the left
 
-## comments
+- <C-l> go to window on the right
 
-gcc -- comment current line
+### comments
 
-gc{motion} -- comment motion -- repeat command to undo
+- gcc comment current line
 
-## nvim-tree
+- gc{motion} comment motion repeat command to undo
 
-<leader>e -- toggle file explorer
+### nvim-tree
 
-## telescope fuzzy finder
+- <leader>e toggle file explorer
 
-<leader>ff -- open search mask for files within pwd
+### telescope fuzzy finder
 
-<leader>fs -- open search mask for strings within pwd
+- <leader>ff open search mask for files within pwd
 
-<leader>fc -- search for string under cursor within pwd
+- <leader>fs open search mask for strings within pwd
 
-<leader>fb -- list buffers
+- <leader>fc search for string under cursor within pwd
 
-<leader>fh -- list help tags
+- <leader>fb list buffers
 
-## harpoon file navigator
+- <leader>fh list help tags
 
-<leader>h -- open harpoon window
+### harpoon file navigator
 
-<leader>a -- add current file to harpoon
+- <leader>h open harpoon window
 
-<leader>[n] -- switch to [n]th file in harpoon
+- <leader>a add current file to harpoon
 
-## autocomplete
+- <leader>[n] switch to [n]th file in harpoon
 
-<C-j> -- go down to next suggestion
+### autocomplete
 
-<C-k> -- go up to previous suggestion
+- <C-j> go down to next suggestion
 
-## buffers
+- <C-k> go up to previous suggestion
 
-:bd -- delete current buffer
+### buffers
 
-## lspsaga
+- :bd delete current buffer
 
-gf -- show definition, references
+### lspsaga
 
-gD -- got to declaration
+- gf show definition, references
 
-gd -- see definition and make edits in window
+- gD got to declaration
 
-gi -- to implementation
+- gd see definition and make edits in window
 
-<leader>ca -- see available code operations
+- gi to implementation
 
-<leader>rn -- smart rename
+- <leader>ca see available code operations
 
-<leader>D -- show  diagnostics for line
+- <leader>rn smart rename
 
-<leader>d -- show diagnostics for cursor
+- <leader>D show  diagnostics for line
 
-[d -- jump to previous diagnostic in buffer
+- <leader>d show diagnostics for cursor
 
-]d -- jump to next diagnostic in buffer
+- [d jump to previous diagnostic in buffer
 
-Ks -- show documentation for what is under cursor
+- ]d jump to next diagnostic in buffer
 
-# tmux bindings
+- Ks show documentation for what is under cursor
 
-<C-Space> -- prefix for tmux commands
+## tmux bindings
 
-<C-r> -- search command history backwards
+- <C-Space> prefix for tmux commands
 
-<C-s> -- serach command history forwards
+- <C-r> search command history backwards
 
-<prefix>- -- split pane horizontally
+- <C-s> serach command history forwards
 
-<prefix>| -- split pane vertically
+- <prefix>- split pane horizontally
 
-<prefix>hjkl -- resize panes
+- <prefix>| split pane vertically
 
-<C-hjkl> -- move between panes
+- <prefix>hjkl resize panes
 
-<prefix>m -- toggle maximize pane
+- <C-hjkl> move between panes
 
-<prefix>c -- create new tmux window
+- <prefix>m toggle maximize pane
 
-<prefix>[n] -- switch to window number [n]
+- <prefix>c create new tmux window
 
-<prefix>n -- switch to next window
+- <prefix>[n] switch to window number [n]
 
-<prefix>w -- show all windows
+- <prefix>n switch to next window
 
-<prefix>s -- show all sessions
+- <prefix>w show all windows
 
-<prefix>, -- rename tmux window
+- <prefix>s show all sessions
 
-<prefix>[ -- enter 'copy' mode
+- <prefix>, rename tmux window
 
-    kl -- move cursor up or down in copy mode
+- <prefix>[ enter 'copy' mode
 
-    v{motion} -- select {motion} in copy mode
+-     kl move cursor up or down in copy mode
 
-    y -- copy selected text in copy mode
+-     v{motion} select {motion} in copy mode
 
-    <C-c> -- exit copy mode
+-     y copy selected text in copy mode
 
-# obsidian vim bindings
+-     <C-c> exit copy mode
 
-s" -- surround with double quotation marks
+## obsidian vim bindings
 
-s' -- surround with single quotation marks
+- s" surround with double quotation marks
 
-sb -- surround with brackets
+- s' surround with single quotation marks
 
-ss -- surround with square brackets
+- sb surround with brackets
 
-sc -- surround with curly brackets
+- ss surround with square brackets
 
-sq -- surround with double guillemets
+- sc surround with curly brackets
 
-sg -- surround with single guillemets
+- sq surround with double guillemets
 
-<Cmd-^> -- enter new footnote
+- sg surround with single guillemets
 
-<C-H> -- toggle left sidebar
+- <Cmd-^> enter new footnote
 
-<C-L> -- toggle right sidebar
+- <C-H> toggle left sidebar
+
+- <C-L> toggle right sidebar
