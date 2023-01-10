@@ -7,7 +7,7 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 
 -- Cursor position
-keymap.set("n", "J", "mzJ`z") -- keeps cursor in place when joining lines 
+keymap.set("n", "J", "mzJ`z") -- keeps cursor in place when joining lines
 
 keymap.set("n", "<C-d>", "<C-d>zz") -- keep cursor in the middle when using Ctrl-D to navigate
 keymap.set("n", "<C-u>", "<C-u>zz") -- keep cursor in the middle when using Ctrl-U to navigate
@@ -34,10 +34,10 @@ keymap.set("n", "x", '"_x')
 keymap.set("x", "<leader>p", [["_dP]])
 
 -- use <leader>y or <leader>Y (=yy) to yank into system clipboard
-keymap.set({"n", "v"}, "<leader>y", [["+y]])
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
-keymap.set({"n", "v"}, "<leader>d", [["_d]]) -- deletes to void register
+keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- deletes to void register
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>") -- increment
