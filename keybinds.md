@@ -124,12 +124,15 @@ Ks → show documentation for what is under cursor
 
 \<C-Space> → prefix for tmux commands  
 \<C-r> → search command history backwards  
-\<C-s> → serach command history forwards  
+\<C-s> → search command history forwards  
+\<prefix>< → toggle tmux command menu 
+\<prefix>space → rearrange panes in current window
 \<prefix>- → split pane horizontally  
 \<prefix>| → split pane vertically  
 \<prefix>hjkl → resize panes  
 \<C-hjkl> → move between panes  
 \<prefix>m → toggle maximize pane  
+\<prefix>x → close pane 
 \<prefix>c → create new tmux window  
 \<prefix>[n] → switch to window number [n]  
 \<prefix>n → switch to next window  
