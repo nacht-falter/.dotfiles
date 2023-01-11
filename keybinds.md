@@ -139,7 +139,7 @@ Ks → show documentation for what is under cursor
 \<prefix>w → show all windows  
 \<prefix>s → show all sessions  
 \<prefix>, → rename tmux window  
-\<prefix>[ → enter 'copy' mode  
+\<C-v> → enter vim copy mode  
     kl → move cursor up or down in copy mode  
     v{motion} → select {motion} in copy mode  
     y → copy selected text in copy mode  
