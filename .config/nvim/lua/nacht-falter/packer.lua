@@ -87,7 +87,13 @@ return packer.startup(function(use)
 
     use("onsails/lspkind.nvim")
 
-    use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function()
+            require("lspsaga").setup({})
+        end,
+    })
 
     use({
         "folke/trouble.nvim",
@@ -125,6 +131,8 @@ return packer.startup(function(use)
 
     -- git integration
     use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+    use("doums/lsp_spinner.nvim")
 
     if packer_bootstrap then
         require("packer").sync()

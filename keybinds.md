@@ -1,25 +1,14 @@
 # my keybindings
 ## vim
 
+\<leader> = space  
+
 ### mode specific
 
 jk → leave insert or visual mode (== ESC)  
 \<C-o> → run in insert mode to execute one command and reenter insert mode  
 = → auto aligns selected lines in visual mode  
-
-### windows
-
-\<C-w>v → split window vertically  
-\<C-w>s → split window  
-\<C-w>c → close current window  
-\<C-w>= → set horizontal windows to equal size  
-
-### tab
-
-:[count]tabnew → open new tab (in positon [count])  
-:tabclose → close current tab  
-:tabn → go to next tab  
-:tabp → go to previous tab  
+ci{character or object} → change inner (also works with tags: cit)
 
 ### objects
 
@@ -29,7 +18,7 @@ jk → leave insert or visual mode (== ESC)
 {operation}ap → perform operation around paragraph  
 {operation}iw → perform operation inside word  
 {operation}aw → perform operation around word  
-\<leader> = space  
+
 
 ### movement
 
@@ -40,17 +29,17 @@ F\<character> → jump to previous <character> in line
 
 ### windows
 
-\<leader>sv → split window vetically  
-\<leader>se → make windows equal width  
-\<leader>sh → split window horizontally  
-\<leader>sc → close current window  
+\<leader>sv → split window vertically (<C-w>v)  
+\<leader>sh → split window horizontally (<C-w>s) 
+\<leader>se → make windows equal width (<C-w>=) 
+\<leader>sc → close current window (<C-w>c) 
 
 ### tabs
 
-\<leader>to → open new tab  
-\<leader>tc → close current tab  
-\<leader>tn → go to next tab  
-\<leader>tp → go to previous tab  
+\<leader>to → open new tab  (:tabnew)
+\<leader>tc → close current tab  (:tabclose)
+\<leader>tn → go to next tab  (:tabn)
+\<leader>tp → go to previous tab (tabp) 
 
 ### lines
 
@@ -109,7 +98,7 @@ gc{motion} → comment motion → repeat command to undo
 ### lspsaga
 
 gf → show definition, references  
-gD → got to declaration  
+gD → go to declaration  
 gd → see definition and make edits in window  
 gi → to implementation  
 \<leader>ca → see available code operations  
@@ -118,7 +107,7 @@ gi → to implementation
 \<leader>d → show diagnostics for cursor  
 [d → jump to previous diagnostic in buffer  
 ]d → jump to next diagnostic in buffer  
-Ks → show documentation for what is under cursor  
+K → show documentation for what is under cursor  
 
 ## tmux bindings
 
@@ -139,7 +128,7 @@ Ks → show documentation for what is under cursor
 \<prefix>w → show all windows  
 \<prefix>s → show all sessions  
 \<prefix>, → rename tmux window  
-\<C-v> → enter vim copy mode  
+\<C-v> → enter vim copy' mode  
     kl → move cursor up or down in copy mode  
     v{motion} → select {motion} in copy mode  
     y → copy selected text in copy mode  
