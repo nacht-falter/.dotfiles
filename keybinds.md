@@ -147,7 +147,14 @@ sg → surround with single guillemets
 \<C-H> → toggle left sidebar  
 \<C-L> → toggle right sidebar  
 
-## raycast bindings for window management
+## raycast bindings
+### general
+
+Cmd+, → open raycast preferences
+<A-.> → open note
+
+### window management
+
 <prefix> = Ctrl+Cmd
 <prefix>j → maximize window
 <prefix>k → toggle fullscreen
