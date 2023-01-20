@@ -7,7 +7,7 @@ Rosé Pine colorscheme for iTerm and Neovim from [rosepinetheme.com](https://ros
 
 ## Neovim Setup
 
-1. To setup the Neovim config on another unix system install ![Neovim](https://neovim.io/) first and then ![packer](https://github.com/wbthomason/packer.nvim) by running `git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
+1. To setup the Neovim config on a Mac or Linux system install ![Neovim](https://neovim.io/) first and then ![packer](https://github.com/wbthomason/packer.nvim) by running `git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
 
 2. Then copy .config/nvim/nacht-falter/lua/packer.lua from the repository to ~/.config/nvim/nacht-falter/lua and open the file packer.lua with Neovim. When you save the file all the plugins will be installed (if you copy the whole nvim config before all plugins are installed there will be a lot of error messages).
 
