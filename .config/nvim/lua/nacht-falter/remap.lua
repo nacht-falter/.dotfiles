@@ -48,6 +48,11 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sc", ":close<CR>") -- close current split window
+keymap.set("n", "<leader>ss", "<C-w>x") -- swap windows
+keymap.set("n", "<leader>s>", "<C-w>5>") -- increase current split width
+keymap.set("n", "<leader>s<", "<C-w>5<") -- reduce current split width
+keymap.set("n", "<leader>s+", "<C-w>5+") -- increase current split width
+keymap.set("n", "<leader>s-", "<C-w>5-") -- reduce current split width
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tc", ":tabclose<CR>") -- close current tab
