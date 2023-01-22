@@ -18,6 +18,8 @@ ci{character or object} → change inner (also works with tags: cit)
 {operation}ap → perform operation around paragraph  
 {operation}iw → perform operation inside word  
 {operation}aw → perform operation around word  
+{operation}at → perform operation inside tag  
+{operation}at → perform operation around tag
 
 
 ### movement
@@ -33,6 +35,11 @@ F\<character> → jump to previous <character> in line
 \<leader>sh → split window horizontally (<C-w>s) 
 \<leader>se → make windows equal width (<C-w>=) 
 \<leader>sc → close current window (<C-w>c) 
+\<leader>ss → swap windows (<C-w-x)  
+\<leader>s< → increase current window width (<C-w><)  
+\<leader>s< → decrease current window width (<C-w>>)  
+\<leader>s+ → increase current window height (<C-w>+)  
+\<leader>s- → decrease current window height (<C-w>-)  
 
 ### tabs
 
@@ -150,8 +157,8 @@ sg → surround with single guillemets
 ## raycast bindings
 ### general
 
-Cmd+, → open raycast preferences
-<A-.> → open note
+Cmd, → open raycast preferences
+Cmd. → open note
 
 ### window management
 
