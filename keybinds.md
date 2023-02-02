@@ -98,23 +98,16 @@ gc{motion} → comment motion → repeat command to undo
 \<C-j> → go down to next suggestion  
 \<C-k> → go up to previous suggestion  
 
+### color-picker
+
+\<leader>w → open color-picker in normal mode
+\<C-w> → open color-picker in insert mode
+\<leader>cr → convert between rgb and hex
+\<leader>ch → convert between hsl and hex
+
 ### buffers
 
 :bd → delete current buffer  
-
-### lspsaga
-
-gf → show definition, references  
-gD → go to declaration  
-gd → see definition and make edits in window  
-gi → to implementation  
-\<leader>ca → see available code operations  
-\<leader>rn → smart rename  
-\<leader>D → show  diagnostics for line  
-\<leader>d → show diagnostics for cursor  
-[d → jump to previous diagnostic in buffer  
-]d → jump to next diagnostic in buffer  
-K → show documentation for what is under cursor  
 
 ## tmux bindings
 
