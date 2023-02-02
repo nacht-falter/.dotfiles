@@ -10,7 +10,6 @@ unmap <Space>
 nmap <Space>j ddp
 nmap <Space>k ddkP
 nmap <Space>m @
-
 " jump to beginning/end of paragraph
 nmap <Space>0 {w
 nmap <Space>$ }ge
