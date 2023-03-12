@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>w", "<cmd>PickColor<cr>", opts)
-vim.keymap.set("i", "<C-w", "<cmd>PickColorInsert<cr>", opts)
+vim.keymap.set("i", "<C-w>", "<cmd>PickColorInsert<cr>", opts)
 
 vim.keymap.set("n", "<leader>cr", "<cmd>ConvertHEXandRGB<cr>", opts)
 vim.keymap.set("n", "<leader>ch", "<cmd>ConvertHEXandHSL<cr>", opts)

@@ -15,10 +15,12 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
     -- setup formatters & linters
     sources = {
-        formatting.prettier.with({
-            disabled_filetypes = { "markdown" },
+        -- js/ts formatter
+        formatting.prettierd.with({
+            disabled_filetypes = { "markdown", "html" },
+            extra_args = { "--print-width=120" },
         }),
-        -- formatting.prettier, -- js/ts formatter
+        -- lua
         formatting.stylua, -- lua formatter
         -- python
         formatting.black.with({

@@ -18,8 +18,8 @@ opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 
 -- tabs & indentation
-opt.tabstop = 4 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 4 -- 2 spaces for indent width
+opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
+opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.smartindent = true
@@ -58,8 +58,8 @@ vim.cmd([[
 	if !exists("autocommands_loaded")
 	  let autocommands_loaded = 1
 	    autocmd BufEnter * set nowrap
-        autocmd BufEnter * highlight Normal ctermbg=none 
-        autocmd BufEnter * highlight Normal guibg=none 
+        autocmd BufEnter * highlight Normal ctermbg=none
+        autocmd BufEnter * highlight Normal guibg=none
    	    autocmd BufEnter *.md set wrap
 	    autocmd BufEnter *.md set linebreak
     endif
