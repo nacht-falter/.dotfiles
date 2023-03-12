@@ -9,7 +9,10 @@ unmap <Space>
 " enable line swapping
 nmap <Space>j ddp
 nmap <Space>k ddkP
+
+" workaround for macros with German keyboard layout
 nmap <Space>m @
+
 " jump to beginning/end of paragraph
 nmap <Space>0 {w
 nmap <Space>$ }ge
