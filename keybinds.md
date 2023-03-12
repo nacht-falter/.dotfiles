@@ -36,8 +36,8 @@ F\<character> → jump to previous <character> in line
 \<leader>se → make windows equal width (<C-w>=) 
 \<leader>sc → close current window (<C-w>c) 
 \<leader>ss → swap windows (<C-w-x)  
-\<leader>s< → increase current window width (<C-w><)  
-\<leader>s< → decrease current window width (<C-w>>)  
+\<leader>s< → decrease current window width (<C-w><)  
+\<leader>s> → increase current window width (<C-w>>)  
 \<leader>s+ → increase current window height (<C-w>+)  
 \<leader>s- → decrease current window height (<C-w>-)  
 
