@@ -155,22 +155,22 @@ Cmd. → open note
 
 ### window management
 
-<prefix> = Ctrl+Cmd  
-<prefix>j → maximize window  
-<prefix>k → toggle fullscreen  
-<prefix>h → maximum height left  
-<prefix>l → maximum height right  
-<prefix>u → top left corner  
-<prefix>o → top right corner  
-<prefix>m → bottom left corner  
-<prefix>. → bottom right corner  
-<prefix>i → top half  
-<prefix>, → bottom half  
-<prefix>c → center  
-<prefix>r → restore previous size  
-<prefix>+ → increase size  
-<prefix>- → decrease size  
-<prefix>key_left → move window to previous desktop  
-<prefix>key_right → move window to next desktop  
-<prefix>key_up → move window to next display  
-<prefix>key_down → move window to previous display  
+\<prefix> = Ctrl+Cmd  
+\<prefix>j → maximize window  
+\<prefix>k → toggle fullscreen  
+\<prefix>h → maximum height left  
+\<prefix>l → maximum height right  
+\<prefix>u → top left corner  
+\<prefix>o → top right corner  
+\<prefix>m → bottom left corner  
+\<prefix>. → bottom right corner  
+\<prefix>i → top half  
+\<prefix>, → bottom half  
+\<prefix>c → center  
+\<prefix>r → restore previous size  
+\<prefix>+ → increase size  
+\<prefix>- → decrease size  
+\<prefix>key_left → move window to previous desktop  
+\<prefix>key_right → move window to next desktop  
+\<prefix>key_up → move window to next display  
+\<prefix>key_down → move window to previous display  
