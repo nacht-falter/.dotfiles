@@ -5,12 +5,12 @@ local opt = vim.opt
 -- opt.isfname:append("@-@")
 
 -- disable mouse
-opt.mouse = ""
+-- opt.mouse = ""
 
 -- let undotree handle backups
 opt.swapfile = false
 opt.backup = false
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 opt.undofile = true
 
 -- line numbers
@@ -38,11 +38,11 @@ opt.cursorline = true -- highlight the current cursor line
 
 -- appearance
 opt.termguicolors = true
-opt.background = "dark" -- colorschemes that can be light or dark will be made dark
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+opt.background = 'dark' -- colorschemes that can be light or dark will be made dark
+opt.signcolumn = 'yes' -- show sign column so that text doesn't shift
 
 -- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line or insert mode start position
 
 -- clipboard
 -- opt.clipboard:append("unnamedplus") -- use system clipboard as default register (not recommended)
@@ -53,8 +53,18 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- opt.iskeyword:append("-") -- consider string-string as whole word
 
+-- Highlight on yank
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
+
 -- change settings for .md files
-vim.cmd([[
+vim.cmd [[
 	if !exists("autocommands_loaded")
 	  let autocommands_loaded = 1
 	    autocmd BufEnter * set nowrap
@@ -63,4 +73,12 @@ vim.cmd([[
    	    autocmd BufEnter *.md set wrap
 	    autocmd BufEnter *.md set linebreak
     endif
-]])
+]]
+
+-- Autocommand for Packer to install plugins when packer.lua is saved
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]]
