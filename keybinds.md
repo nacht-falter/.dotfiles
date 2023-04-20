@@ -156,33 +156,20 @@ Cmd. → open note
 ### window management
 
 \<prefix> = Ctrl+Cmd  
-\<prefix>j → maximize window  
-\<prefix>k → toggle fullscreen  
-\<prefix>h → maximum height left  
-\<prefix>l → maximum height right  
-\<prefix>u → top left corner  
-\<prefix>o → top right corner  
-\<prefix>m → bottom left corner  
-\<prefix>. → bottom right corner  
-\<prefix>i → top half  
-\<prefix>, → bottom half  
-\<prefix>c → center  
-\<prefix>r → restore previous size  
-\<prefix>+ → increase size  
-\<prefix>- → decrease size  
 \<prefix>key_left → move window to previous desktop  
 \<prefix>key_right → move window to next desktop  
 \<prefix>key_up → move window to next display  
-\<prefix>key_down → move window to previous display
+\<prefix>key_down → move window to previous display  
     
-## Yabai bindings
+## Skhd bindings
 ### navigate windows
-\<prefix> = Alt  
-\<prefix>jhkl → move focus between windows  
+\<prefix> = Ctrl  
+\<prefix>j,h,k,l → move focus between windows  
+\<prefix>n,p → move focus to next/previous space  
+\<prefix>u,d → move focus between external displays (up and down)  
     
 ### move windows
-\<prefix> = Alt+Shift  
-\<prefix>u,d → change focus between external displays (up and down)  
+\<prefix> = Ctrl + Cmd  
 \<prefix>r → rotate layout clockwise  
 \<prefix>y → flip along y-axis  
 \<prefix>x → flip along x-axis  
@@ -190,7 +177,6 @@ Cmd. → open note
 \<prefix>m → maximize a window  
 \<prefix>e → balance out tree of windows (resize to occupy same area)  
 \<prefix>h,j,k,l → swap windows  
-\<C-A>h,j,k,l →  move window and split  
-\<prefix>s,g → move window to display left and right  
+\<prefix>H,J,K,L →  move window and split  
 \<prefix>p,n → move window to prev and next space  
 \<prefix>{n} → move window to space n  
