@@ -118,7 +118,7 @@ gc{motion} → comment motion → repeat command to undo
 \<prefix>space → rearrange panes in current window
 \<prefix>- → split pane horizontally  
 \<prefix>| → split pane vertically  
-\<prefix>hjkl → resize panes  
+\<prefix>h,j,k,l → resize panes  
 \<C-hjkl> → move between panes  
 \<prefix>m → toggle maximize pane  
 \<prefix>x → close pane 
@@ -173,4 +173,24 @@ Cmd. → open note
 \<prefix>key_left → move window to previous desktop  
 \<prefix>key_right → move window to next desktop  
 \<prefix>key_up → move window to next display  
-\<prefix>key_down → move window to previous display  
+\<prefix>key_down → move window to previous display
+    
+## Yabai keybindings
+### Navigate windows
+\<prefix> = Alt
+\<prefix>jhkl → move focus between windows
+    
+### Move windows
+\<prefix> = Alt+Shift
+\<prefix>u,d → change focus between external displays (up and down)
+\<prefix>r → rotate layout clockwise
+\<prefix>y → flip along y-axis
+\<prefix>x → flip along x-axis
+\<prefix>t → toggle window float
+\<prefix>m → maximize a window
+\<prefix>e → balance out tree of windows (resize to occupy same area)
+\<prefix>h,j,k,l → swap windows
+\<C-A>h,j,k,l →  move window and split
+\<prefix>s,g → move window to display left and right
+\<prefix>p,n → move window to prev and next space
+\<prefix>{n} → move window to space n
