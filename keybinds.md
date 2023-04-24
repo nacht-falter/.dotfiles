@@ -180,3 +180,4 @@ Cmd. → open note
 \<prefix>H,J,K,L →  move window and split  
 \<prefix>p,n → move window to prev and next space  
 \<prefix>{n} → move window to space n  
+\<prefix>0 → reload yabai config
