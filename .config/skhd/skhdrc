@@ -1,21 +1,40 @@
-# Disable shortcuts for iTerm
-.blacklist [
-    "iTerm2"
+# change window focus within space
+ctrl - j [
+    * : yabai -m window --focus south
+    "iTerm2" ~
+]
+ctrl - k [
+    * : yabai -m window --focus north
+    "iTerm2" ~
+]
+ctrl - h [
+    * : yabai -m window --focus west
+    "iTerm2" ~
+]
+ctrl - l [
+    * : yabai -m window --focus east
+    "iTerm2" ~
 ]
 
-# change window focus within space
-ctrl - j : yabai -m window --focus south
-ctrl - k : yabai -m window --focus north
-ctrl - h : yabai -m window --focus west
-ctrl - l : yabai -m window --focus east
-
 # switch focus to next/previous space
-ctrl - n : osascript -e 'tell application "System Events" to key code 124 using control down'
-ctrl - p : osascript -e 'tell application "System Events" to key code 123 using control down'
+ctrl - n [
+    * : osascript -e 'tell application "System Events" to key code 124 using control down'
+    "iTerm2" ~
+]
+ctrl - p [
+    * : osascript -e 'tell application "System Events" to key code 123 using control down'
+    "iTerm2" ~
+]
 
 # change focus between external displays (left and right)
-ctrl - u: yabai -m display --focus north
-ctrl - d: yabai -m display --focus south
+ctrl - u[
+    * : yabai -m display --focus north
+    "iTerm2" ~
+]
+ctrl - d[
+    * : yabai -m display --focus south
+    "iTerm2" ~
+]
 
 # rotate layout clockwise
 ctrl + cmd - r : yabai -m space --rotate 270
@@ -52,12 +71,15 @@ ctrl + cmd - p : yabai -m window --space prev;
 ctrl + cmd - n : yabai -m window --space next;
 
 # move window to space #
-ctrl + cmd - 1 : yabai -m window --space 1;
-ctrl + cmd - 2 : yabai -m window --space 2;
-ctrl + cmd - 3 : yabai -m window --space 3;
-ctrl + cmd - 4 : yabai -m window --space 4;
-ctrl + cmd - 5 : yabai -m window --space 5;
-ctrl + cmd - 6 : yabai -m window --space 6;
-ctrl + cmd - 7 : yabai -m window --space 7;
-ctrl + cmd - 8 : yabai -m window --space 8;
-ctrl + cmd - 9 : yabai -m window --space 9;
+ctrl + cmd - 1 : yabai -m window --space 1
+ctrl + cmd - 2 : yabai -m window --space 2
+ctrl + cmd - 3 : yabai -m window --space 3
+ctrl + cmd - 4 : yabai -m window --space 4
+ctrl + cmd - 5 : yabai -m window --space 5
+ctrl + cmd - 6 : yabai -m window --space 6
+ctrl + cmd - 7 : yabai -m window --space 7
+ctrl + cmd - 8 : yabai -m window --space 8
+ctrl + cmd - 9 : yabai -m window --space 9
+
+# reload yabai config
+ctrl + cmd -  : yabai -m rule --add app="Finder" space=1; yabai -m rule --add app="Firefox" space=2; yabai -m rule --add app="iTerm" space=3; yabai -m rule --add app="Obsidian" space=4; yabai -m rule --add app="Mail" space=5; yabai -m rule --add app="Calendar" space=6; yabai -m rule --add app="Reminders" space=6
