@@ -191,3 +191,7 @@ Cmd. → open note
 \<prefix>p,n → move window to prev and next space  
 \<prefix>{n} → move window to space n  
 \<prefix>0 → reload yabai config
+
+### display rotation
+\<prefix> = alt + cmd
+\<prefix>d → rotate external display

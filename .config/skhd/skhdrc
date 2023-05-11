@@ -26,6 +26,9 @@ ctrl - p [
     "iTerm2" ~
 ]
 
+# rotate external display
+alt + cmd - d : osascript ~/Library/Services/Rotate\ external\ display.scpt
+
 # change focus between external displays (left and right)
 ctrl - u[
     * : yabai -m display --focus north
