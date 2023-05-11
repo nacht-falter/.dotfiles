@@ -43,6 +43,6 @@ map s[ :surround_square_brackets
 map ss :surround_square_brackets
 map s{ :surround_curly_brackets
 map sc :surround_curly_brackets
+map sa :surround_asterisk
 map sq :surround_double_guillemets
 map sg :surround_single_guillemets
-map sa :surround_asterisk
