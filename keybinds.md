@@ -176,8 +176,9 @@ Cmd. → open note
 \<prefix> = Ctrl  
 \<prefix>j,h,k,l → move focus between windows  
 \<prefix>n,p → move focus to next/previous space  
-\<prefix>u,d → move focus between external displays (up and down)  
-    
+\<prefix>u,d → move focus between displays (up and down)  
+ctrl + cmd - u,d → move focus between displays (up and down)
+
 ### move windows
 \<prefix> = Ctrl + Cmd  
 \<prefix>r → rotate layout clockwise  
@@ -190,8 +191,8 @@ Cmd. → open note
 \<prefix>H,J,K,L →  move window and split  
 \<prefix>p,n → move window to prev and next space  
 \<prefix>{n} → move window to space n  
-\<prefix>0 → reload yabai config
+\<prefix>0 → reload yabai config  
 
 ### display rotation
-\<prefix> = alt + cmd
-\<prefix>d → rotate external display
+\<prefix> = alt + cmd  
+\<prefix>d → rotate external display  

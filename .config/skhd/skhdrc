@@ -40,6 +40,14 @@ ctrl - d[
     "iTerm2" ~
     "Obsidian" ~
 ]
+ctrl + cmd - u[
+    "iTerm2" : yabai -m display --focus north
+    "Obsidian" : yabai -m display --focus north
+]
+ctrl + cmd - d[
+    "iTerm2" : yabai -m display --focus south
+    "Obsidian" : yabai -m display --focus south
+]
 
 # rotate layout clockwise
 ctrl + cmd - r : yabai -m space --rotate 270
