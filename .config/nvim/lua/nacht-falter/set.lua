@@ -63,13 +63,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- Code folding
+opt.foldmethod = 'expr'
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
 -- change settings for .md files
 vim.cmd [[
 	if !exists("autocommands_loaded")
 	  let autocommands_loaded = 1
 	    autocmd BufEnter * set nowrap
-        autocmd BufEnter * highlight Normal ctermbg=none
-        autocmd BufEnter * highlight Normal guibg=none
+	    autocmd BufEnter * set foldlevel=20
+	    autocmd BufEnter * highlight Normal ctermbg=none
+	    autocmd BufEnter * highlight Normal guibg=none
    	    autocmd BufEnter *.md set wrap
 	    autocmd BufEnter *.md set linebreak
     endif
