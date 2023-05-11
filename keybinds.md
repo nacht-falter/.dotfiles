@@ -153,19 +153,19 @@ ss → surround with square brackets
 sc → surround with curly brackets  
 sq → surround with double guillemets  
 sg → surround with single guillemets  
-\<Cmd-^> → enter new footnote  
+\<cmd-^> → enter new footnote  
 \<C-H> → toggle left sidebar  
 \<C-L> → toggle right sidebar  
 
 ## raycast bindings
 ### general
 
-Cmd, → open raycast preferences  
-Cmd. → open note  
+cmd, → open raycast preferences  
+cmd. → open note  
 
 ### window management
 
-\<prefix> = Ctrl+Cmd  
+\<prefix> = ctrl + cmd  
 \<prefix>key_left → move window to previous desktop  
 \<prefix>key_right → move window to next desktop  
 \<prefix>key_up → move window to next display  
@@ -173,14 +173,14 @@ Cmd. → open note
     
 ## Skhd bindings
 ### navigate windows
-\<prefix> = Ctrl  
+\<prefix> = ctrl  
 \<prefix>j,h,k,l → move focus between windows  
 \<prefix>n,p → move focus to next/previous space  
-\<prefix>u,d → move focus between displays (up and down)  
+\<prefix>u,d → move focus between external displays (up and down)  
 ctrl + cmd - u,d → move focus between displays (up and down)
 
 ### move windows
-\<prefix> = Ctrl + Cmd  
+\<prefix> = ctrl + cmd  
 \<prefix>r → rotate layout clockwise  
 \<prefix>y → flip along y-axis  
 \<prefix>x → flip along x-axis  
