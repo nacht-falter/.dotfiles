@@ -55,6 +55,16 @@ F\<character> → jump to previous <character> in line
 \<leader>n → adds a new line below without going to insert mode  
 \<leader>N → adds a new line above without going to insert mode  
 
+### folding
+
+zo → opens a fold at the cursor.
+zO → opens all folds at the cursor.
+zc → closes a fold at the cursor.
+zm → increases the foldlevel by one.
+zM → closes all open folds.
+zr → decreases the foldlevel by one.
+zR → decreases the foldlevel to zero -- all folds will be open.
+
 ### vim-surround
 
 ys{motion}\<char> or <tag> → surrounds the selected motion with the character. For brackets: Using the opening bracket adds a whitespace around the {motion}, using the closing bracket doesn't.  
