@@ -26,6 +26,8 @@ yabai -m rule --add app="^Spotify$" manage=off
 
 # Disable yabai for popups
 yabai -m rule --add app="kAXDialogSubrole" manage=off
+yabai -m rule --add app=* fullscreen=off space=float
+yabai -m rule --add app=".*" except="^(confirm|alert|notification|popup|menu)$" manage=on
 
 # Move apps to spaces
 yabai -m rule --add app="Finder" space=1
