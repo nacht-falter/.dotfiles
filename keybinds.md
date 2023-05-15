@@ -138,7 +138,7 @@ gc{motion} → comment motion → repeat command to undo
 \<prefix>w → show all windows  
 \<prefix>s → show all sessions  
 \<prefix>, → rename tmux window  
-\<C-v> → enter vim copy' mode  
+\<C-s> → enter vim copy' mode  
     kl → move cursor up or down in copy mode  
     v{motion} → select {motion} in copy mode  
     y → copy selected text in copy mode  
