@@ -109,13 +109,6 @@ gc{motion} → comment motion → repeat command to undo
 \<C-j> → go down to next suggestion  
 \<C-k> → go up to previous suggestion  
 
-### color-picker
-
-\<leader>w → open color-picker in normal mode
-\<C-w> → open color-picker in insert mode
-\<leader>cr → convert between rgb and hex
-\<leader>ch → convert between hsl and hex
-
 ### buffers
 
 :bd → delete current buffer  
@@ -139,7 +132,7 @@ gc{motion} → comment motion → repeat command to undo
 \<prefix>w → show all windows  
 \<prefix>s → show all sessions  
 \<prefix>, → rename tmux window  
-\<C-s> → enter vim copy' mode  
+\<C-q> → enter vim copy' mode  
     kl → move cursor up or down in copy mode  
     v{motion} → select {motion} in copy mode  
     y → copy selected text in copy mode  
