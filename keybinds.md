@@ -72,6 +72,7 @@ ds\<char> → deletes the surrounding characters
 cs\<char1><char2> → replaces surrounding character1 with character2  
 cst\<char> → replace surrounding tag with character  
 dst → delete surrounding tag  
+S\<char> or <tag> → surround selected text with char or tag in visual mode
 
 ### vim-tmux
 
@@ -170,29 +171,6 @@ cmd. → open note
 \<prefix>key_right → move window to next desktop  
 \<prefix>key_up → move window to next display  
 \<prefix>key_down → move window to previous display  
-    
-## Skhd bindings
-### navigate windows
-\<prefix> = ctrl  
-\<prefix>j,h,k,l → move focus between windows  
-\<prefix>n,p → move focus to next/previous space  
-\<prefix>u,d → move focus between external displays (up and down)  
-ctrl + cmd - u,d → move focus between displays (up and down)
 
-### move windows
-\<prefix> = ctrl + cmd  
-\<prefix>r → rotate layout clockwise  
-\<prefix>y → flip along y-axis  
-\<prefix>x → flip along x-axis  
-\<prefix>t → toggle window float  
-\<prefix>m → maximize a window  
-\<prefix>e → balance out tree of windows (resize to occupy same area)  
-\<prefix>h,j,k,l → swap windows  
-\<prefix>H,J,K,L →  move window and split  
-\<prefix>p,n → move window to prev and next space  
-\<prefix>{n} → move window to space n  
-\<prefix>0 → reload yabai config  
-
-### display rotation
-\<prefix> = alt + cmd  
-\<prefix>d → rotate external display  
+## skhd
+→ refer to .skhdrc for skhd keybinds
