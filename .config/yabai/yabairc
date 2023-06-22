@@ -21,24 +21,32 @@ yabai -m config mouse_drop_action swap
 # Disable yabai for specific apps
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^iTerm2$" manage=off
+# yabai -m rule --add app="^iTerm2$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off
+yabai -m rule --add app="^CyberGhost$" manage=off
+yabai -m rule --add app="^DeepL$" manage=off
 
 # Disable yabai for popups
-yabai -m rule --add app="kAXDialogSubrole" manage=off
-yabai -m rule --add app=* fullscreen=off space=float
-yabai -m rule --add app=".*" except="^(confirm|alert|notification|popup|menu)$" manage=on
+yabai -m config window_topmost on
+
+default_space=1
+utils_space=2
+terminal_space=3
+browser_space=4
+writing_space=5
+mail_space=6
+social_space=7
+media_space=8
+misc_space= 9
 
 # Move apps to spaces
-yabai -m rule --add app="Finder" space=1
-yabai -m rule --add app="Firefox" space=2
-yabai -m rule --add app="iTerm" space=3
-yabai -m rule --add app="Obsidian" space=4
-yabai -m rule --add app="Mail" space=5
-yabai -m rule --add app="Calendar" space=6
-yabai -m rule --add app="Reminders" space=6
-yabai -m rule --add app="Slack" space=7
-yabai -m rule --add app="Spotify" space=8
-
-# Move all apps to their spaces when monitor is added or removed
-yabai -m signal --add event=display_add or event=display_remove action='yabai -m rule --add app="Finder" space=1; yabai -m rule --add app="Firefox" space=2; yabai -m rule --add app="iTerm" space=3; yabai -m rule --add app="Obsidian" space=4; yabai -m rule --add app="Mail" space=5; yabai -m rule --add app="Calendar" space=6; yabai -m rule --add app="Reminders" space=6'
+yabai -m rule --add app="Finder" space=$default_space
+yabai -m rule --add app="Calendar" space=$utils_space
+yabai -m rule --add app="Reminders" space=$utils_space
+yabai -m rule --add app="Preview" space=$default_space
+yabai -m rule --add app="iTerm" space=$terminal_space
+yabai -m rule --add app="Firefox" space=$browser_space
+yabai -m rule --add app="Obsidian" space=$writing_space
+yabai -m rule --add app="Mail" space=$mail_space
+yabai -m rule --add app="Slack" space=$social_space
+yabai -m rule --add app="Spotify" space=$media_space
