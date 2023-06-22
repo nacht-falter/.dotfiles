@@ -15,6 +15,7 @@ keymap.set('n', 'n', 'nzzzv') -- keep cursor in the middle when navigating searc
 keymap.set('n', 'N', 'Nzzzv') -- keep cursor in the middle when navigating search results
 keymap.set('v', 'J', ":m '>+1<CR>gv=gv") -- make J and K move selection down or up in visual mode
 keymap.set('v', 'K', ":m '<-2<CR>gv=gv") -- make J and K move selection down or up in visual mode
+keymap.set('i', '<C-a>', '<C-o>$') -- jump to end of line while staying in insert mode
 
 -- file explorer
 keymap.set('n', '<leader>pv', vim.cmd.Ex) -- open vim file explorer
@@ -22,6 +23,7 @@ keymap.set('n', '<leader>pv', vim.cmd.Ex) -- open vim file explorer
 -- use jk to exit insert and visual mode
 keymap.set('i', 'jk', '<ESC>')
 keymap.set('v', 'jk', '<ESC>')
+keymap.set('s', 'jk', '<ESC>')
 
 -- search
 keymap.set('n', '<leader>nh', ':nohl<CR>') -- clear search highlights

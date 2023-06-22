@@ -11,6 +11,15 @@ local ensure_packer = function()
 end
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
+-- autocommand that reloads neovim and installs/updates/removes plugins
+-- when file is saved
+vim.cmd [[ 
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost packer.lua source <afile> | PackerSync
+augroup end
+]]
+
 -- import packer safely
 local status, packer = pcall(require, 'packer')
 if not status then
@@ -148,14 +157,6 @@ return packer.startup(function(use)
 
   -- git integration
   use 'lewis6991/gitsigns.nvim' -- show line modifications on left hand side
-
-  -- color picker
-  use {
-    'ziontee113/color-picker.nvim',
-    config = function()
-      require 'color-picker'
-    end,
-  }
 
   if packer_bootstrap then
     require('packer').sync()

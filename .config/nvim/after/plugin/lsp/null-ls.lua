@@ -24,6 +24,11 @@ null_ls.setup {
     -- python
     formatting.black,
     formatting.shfmt, -- bash formatter
+    -- formatting.djlint.with {
+    --   command = 'djlint',
+    --   args = { '--reformat', '--indent', '2', '-' },
+    -- },
+    formatting.djhtml,
     diagnostics.eslint_d.with { -- js/ts linter
       -- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
       condition = function(utils)
