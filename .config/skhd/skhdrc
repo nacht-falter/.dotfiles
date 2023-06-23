@@ -8,7 +8,7 @@ ctrl + cmd - h: yabai -m window --focus west
 ctrl + cmd - l: yabai -m window --focus east
 
 # rotate external display
-shift + ctrl - d : osascript ~/Library/Services/Rotate\ external\ display.scpt
+shift + ctrl - d : osascript ~/.dotfiles/osascript/rotate_external_display.scpt
 
 # change focus between external displays (left and right)
 ctrl + cmd - u: yabai -m display --focus north
@@ -61,13 +61,17 @@ ctrl + cmd - 8 : yabai -m window --space 8; yabai -m display --focus 2; osascrip
 ctrl + cmd - 9 : yabai -m window --space 9; yabai -m display --focus 2; osascript -e 'tell application "System Events" to key code 25 using control down'
 
 # move focus to application
-shift + ctrl - c: osascript ~/Coding/Applescript/move_focus_to_app.scpt "Calendar"
-shift + ctrl - i: osascript ~/Coding/Applescript/move_focus_to_app.scpt "iTerm2"
-shift + ctrl - f: osascript ~/Coding/Applescript/move_focus_to_app.scpt "Finder"
-shift + ctrl - b: osascript ~/Coding/Applescript/move_focus_to_app.scpt "Firefox"
-shift + ctrl - o: osascript ~/Coding/Applescript/move_focus_to_app.scpt "Obsidian"
-shift + ctrl - m: osascript ~/Coding/Applescript/move_focus_to_app.scpt "Mail"
-shift + ctrl - s: osascript ~/Coding/Applescript/move_focus_to_app.scpt "Safari"
+shift + ctrl - c: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "Calendar"
+shift + ctrl - i: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "iTerm2"
+shift + ctrl - f: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "Finder"
+shift + ctrl - b: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "Firefox"
+shift + ctrl - o: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "Obsidian"
+shift + ctrl - m: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "Mail"
+shift + ctrl - s: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "Safari"
+shift + ctrl - r: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "Reminders"
+shift + ctrl - a: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "Activity Monitor"
+shift + ctrl - p: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "System Preferences"
+shift + ctrl - t: osascript ~/.dotfiles/osascript/move_focus_to_app.scpt "Typora"
 
 # reload yabai config
 ctrl + cmd - 0 : yabai --restart-service
