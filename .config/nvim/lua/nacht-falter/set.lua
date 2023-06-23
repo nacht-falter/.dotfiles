@@ -75,9 +75,17 @@ vim.cmd [[
 	    autocmd BufEnter * set foldlevel=20
 	    autocmd BufEnter * highlight Normal ctermbg=none
 	    autocmd BufEnter * highlight Normal guibg=none
-   	    autocmd BufEnter *.md set wrap
+      autocmd BufEnter *.md set wrap
+	    autocmd BufEnter *.md set linebreak
 	    autocmd BufEnter *.md set linebreak
     endif
+]]
+
+vim.cmd [[
+  augroup htmlFileType
+    autocmd!
+    autocmd BufRead,BufNewFile *.html setfiletype html
+  augroup END
 ]]
 
 -- Autocommand for Packer to install plugins when packer.lua is saved
