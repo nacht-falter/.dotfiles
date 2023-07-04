@@ -9,7 +9,7 @@ local formatting = null_ls.builtins.formatting -- to setup formatters
 local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
 -- to setup format on save
-local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
+-- local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
 -- configure null_ls
 null_ls.setup {
@@ -22,13 +22,14 @@ null_ls.setup {
     },
     formatting.stylua, -- lua formatter
     -- python
-    formatting.black,
+    formatting.black.with {
+      extra_args = { "--line-length","79" }
+    },
     formatting.shfmt, -- bash formatter
     -- formatting.djlint.with {
     --   command = 'djlint',
     --   args = { '--reformat', '--indent', '2', '-' },
     -- },
-    formatting.djhtml,
     diagnostics.eslint_d.with { -- js/ts linter
       -- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
       condition = function(utils)
