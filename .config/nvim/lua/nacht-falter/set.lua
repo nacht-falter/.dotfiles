@@ -81,12 +81,12 @@ vim.cmd [[
     endif
 ]]
 
-vim.cmd [[
-  augroup htmlFileType
-    autocmd!
-    autocmd BufRead,BufNewFile *.html setfiletype html
-  augroup END
-]]
+-- vim.cmd [[
+--   augroup htmlFileType
+--     autocmd!
+--     autocmd BufRead,BufNewFile *.html setfiletype html
+--   augroup END
+-- ]]
 
 -- Autocommand for Packer to install plugins when packer.lua is saved
 vim.cmd [[
