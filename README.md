@@ -21,6 +21,8 @@ Rosé Pine colorscheme for iTerm and Neovim from [rosepinetheme.com](https://ros
 
 2. Copy the file .tmux.conf from the repository to your home folder.
 
+3. Start tmux and press <prefix>+I to install plugins.
+
 ## yabai and skhd setup
 1. Install yabai and skhd with homebrew:
 
