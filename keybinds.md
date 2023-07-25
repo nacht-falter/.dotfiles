@@ -9,6 +9,9 @@ jk → leave insert or visual mode (== ESC)
 \<C-o> → run in insert mode to execute one command and reenter insert mode  
 = → auto aligns selected lines in visual mode  
 ci{character or object} → change inner (also works with tags: cit)
+\<C-v> → Enter visual block mode
+\<C-a> → Increment selected numbers in visual block mode
+g<C-a> → Increment selected numbers and incrementaion steps in visual block mode 
 
 ### objects
 
