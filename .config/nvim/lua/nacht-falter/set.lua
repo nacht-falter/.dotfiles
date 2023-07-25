@@ -1,6 +1,8 @@
 local opt = vim.opt
 
--- opt.scrolloff = 8
+-- Keep lines visible above and below cursor
+opt.scrolloff = 8
+
 -- opt.signcolumn = "yes"
 -- opt.isfname:append("@-@")
 

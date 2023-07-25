@@ -20,10 +20,10 @@ keymap.set('i', '<C-a>', '<C-o>$') -- jump to end of line while staying in inser
 -- file explorer
 keymap.set('n', '<leader>pv', vim.cmd.Ex) -- open vim file explorer
 
--- use jk to exit insert and visual mode
-keymap.set('i', 'jk', '<ESC>')
-keymap.set('v', 'jk', '<ESC>')
-keymap.set('s', 'jk', '<ESC>')
+-- -- use jk to exit insert and visual mode
+-- keymap.set('i', 'jk', '<ESC>')
+-- keymap.set('v', 'jk', '<ESC>')
+-- keymap.set('s', 'jk', '<ESC>')
 
 -- search
 keymap.set('n', '<leader>nh', ':nohl<CR>') -- clear search highlights
