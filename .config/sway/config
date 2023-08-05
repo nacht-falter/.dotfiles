@@ -40,6 +40,8 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     exec swayidle -w \
           timeout 300 'swaylock -f -c 000000' \
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          timeout 900 'systemctl suspend' \
+          before-sleep 'playerctl pause' \
           before-sleep 'swaylock -f -c 000000'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -49,12 +51,13 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
 #
 # Example configuration:
 #
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+  input "1739:0:Synaptics_TM3289-021" {
+      dwt enabled
+      tap enabled
+      natural_scroll enabled
+      middle_emulation enabled
+      tap_button_map lrm
+  }
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -84,7 +87,8 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Shift+e exec swaymsg exit
+    # bindsym $mod+Shift+e exec swaymsg exit
+    bindsym $mod+Shift+e exec r=$(echo "" | dmenu -p "Exit? y|n"); [[ "$r" == "y" ]] && exec swaymsg exit
 
     # Brightness controls (light needs to be able to with NOPASSWD):
     bindsym XF86MonBrightnessUp exec sudo light -A 10
@@ -94,13 +98,27 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+    # Media Controls:
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
-
+    bindsym $mod+t exec spt pb -t
+    bindsym $mod+n exec spt pb -n
+    bindsym $mod+p exec spt pb -p
+            
     # Locking:
     bindsym $mod+Shift+i exec swaylock -f -c 000000
-#
+
+    # Suspend:
+    bindsym $mod+Shift+s exec r=$(echo "" | dmenu -p "Suspend? y|n"); [[ "$r" == "y" ]] && exec systemctl suspend
+
+    # Apps:
+    bindsym $mod+period exec /usr/bin/xpad -t
+    
+    # Scripts:
+    bindsym $mod+Shift+p exec ~/.dotfiles/spts.sh
+ 
 # Moving around:
 #
     # Move your focus around
@@ -137,15 +155,15 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     set $ws9 9
 
     # switch to workspace
-    bindsym $mod+1 workspace $ws1
-    bindsym $mod+2 workspace $ws2
-    bindsym $mod+3 workspace $ws3
-    bindsym $mod+4 workspace $ws4
-    bindsym $mod+5 workspace $ws5
-    bindsym $mod+6 workspace $ws6
-    bindsym $mod+7 workspace $ws7
-    bindsym $mod+8 workspace $ws8
-    bindsym $mod+9 workspace $ws9
+    bindsym $mod+1 workspace $ws1; exec pgrep alacritty || exec alacritty -e tmux
+    bindsym $mod+2 workspace $ws2; exec pgrep firefox || exec firefox
+    bindsym $mod+3 workspace $ws3; exec pgrep dolphin || exec dolphin
+    bindsym $mod+4 workspace $ws4; exec pgrep obsidian || exec obsidian
+    bindsym $mod+5 workspace $ws5; exec pgrep thunderbird || exec thunderbird
+    bindsym $mod+6 workspace $ws6;
+    bindsym $mod+7 workspace $ws7; exec pgrep slack exec slack
+    bindsym $mod+8 workspace $ws8; exec pgrep foot || foot -e spt
+    bindsym $mod+9 workspace $ws9; exec pgrep chatgpt-desktop || exec chatgpt-desktop
 
     # Move focused container to workspace
     bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -173,7 +191,13 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     assign [app_id="Alacritty"] $ws1
     assign [class="firefox"] $ws2
     assign [app_id="org.kde.dolphin"] $ws3
+    assign [class="obsidian"] $ws4
+    assign [class="thunderbird"] $ws5
+    assign [class="Slack"] $ws7
+    assign [class="Spotify"] $ws8
+    assign [app_id="foot"] $ws8
     assign [class="ChatGPT Desktop"] $ws9
+    for_window [app_id="xpad"] floating enable
 
     # Assign workspaces to outputs
     workspace $ws1 output $external_display1
@@ -195,7 +219,7 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    # bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
@@ -212,11 +236,12 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     bindsym $mod+a focus parent
     
     # Remove all borders from applications
-    default_border none
+    default_border pixel 1
+    hide_edge_borders smart
 
     # Gaps
-    gaps inner 5
-    gaps outer 1
+    # gaps inner 5
+    # gaps outer 0
 #
 # Scratchpad:
 #
@@ -254,6 +279,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Switch keyboard layout
+# or input <identifier>
+input "type:keyboard" {
+    xkb_layout us,de
+    xkb_options grp:win_space_toggle
+}
 #
 # Status Bar:
 #
@@ -272,8 +303,15 @@ bar {
 }
 
 # Stuff to run on start
-exec alacritty
+exec alacritty -e tmux
 exec firefox
 exec dolphin
+exec obsidian
+exec thunderbird
+exec slack
+exec foot -e spt
+exec chatgpt-desktop
+exec xpad
+exec swaymsg "workspace 1"
 
 include /etc/sway/config.d/*
