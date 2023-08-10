@@ -88,7 +88,18 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     # bindsym $mod+Shift+e exec swaymsg exit
-    bindsym $mod+Shift+e exec r=$(echo "" | dmenu -p "Exit? y|n"); [[ "$r" == "y" ]] && exec swaymsg exit
+    bindsym $mod+Shift+e exec ~/.dotfiles/.config/sway/confirm.sh exit
+
+    # Shutdown/reboot
+    bindsym $mod+Shift+x exec ~/.dotfiles/.config/sway/confirm.sh shutdown
+    bindsym $mod+Shift+r exec ~/.dotfiles/.config/sway/confirm.sh reboot
+
+    # Locking:
+    bindsym $mod+Shift+i exec swaylock -f -c 000000
+
+    # Suspend:
+    bindsym $mod+Shift+s exec ~/.dotfiles/.config/sway/confirm.sh suspend 
+
 
     # Brightness controls (light needs to be able to with NOPASSWD):
     bindsym XF86MonBrightnessUp exec sudo light -A 10
@@ -107,12 +118,6 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     bindsym $mod+n exec spt pb -n
     bindsym $mod+p exec spt pb -p
             
-    # Locking:
-    bindsym $mod+Shift+i exec swaylock -f -c 000000
-
-    # Suspend:
-    bindsym $mod+Shift+s exec r=$(echo "" | dmenu -p "Suspend? y|n"); [[ "$r" == "y" ]] && exec systemctl suspend
-
     # Apps:
     bindsym $mod+period exec /usr/bin/xpad -t
     
@@ -158,7 +163,7 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     bindsym $mod+1 workspace $ws1; exec pgrep alacritty || exec alacritty -e tmux
     bindsym $mod+2 workspace $ws2; exec pgrep firefox || exec firefox
     bindsym $mod+3 workspace $ws3; exec pgrep dolphin || exec dolphin
-    bindsym $mod+4 workspace $ws4; exec pgrep obsidian || exec obsidian
+    bindsym $mod+4 workspace $ws4; exec pgrep obsidian
     bindsym $mod+5 workspace $ws5; exec pgrep thunderbird || exec thunderbird
     bindsym $mod+6 workspace $ws6;
     bindsym $mod+7 workspace $ws7; exec pgrep slack exec slack
