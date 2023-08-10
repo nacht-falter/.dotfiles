@@ -9,6 +9,10 @@ opt.scrolloff = 8
 -- disable mouse
 -- opt.mouse = ""
 
+-- Display the current file name in the statusline
+vim.opt.statusline = vim.opt.statusline + ' %f'
+
+
 -- let undotree handle backups
 opt.swapfile = false
 opt.backup = false
