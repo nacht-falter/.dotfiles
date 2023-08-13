@@ -20,9 +20,6 @@ nmap <Space>$ }ge
 " Yank to system clipboard
 set clipboard=unnamed
 
-" set jk to leave insert mode 
-imap jk <Esc>
-
 " enable vim-surround behaviour
 exmap surround_double_quotes surround " "
 exmap surround_double_guillemets surround » «
