@@ -1,5 +1,5 @@
 # .dotfiles
-Config files for my development environment (Neovim, tmux, ZSH, iTerm).
+Config files for my development environment
 
 Based on ![josean-dev/dev-environment-files](https://github.com/josean-dev/dev-environment-files) (Neovim, tmux, yabai and skhd) and [ThePrimeagen/init.lua](https://github.com/ThePrimeagen/init.lua) (Neovim).
 
@@ -22,13 +22,3 @@ Rosé Pine colorscheme for iTerm and Neovim from [rosepinetheme.com](https://ros
 2. Copy the file .tmux.conf from the repository to your home folder.
 
 3. Start tmux and press <prefix>+I to install plugins.
-
-## yabai and skhd setup
-1. Install yabai and skhd with homebrew:
-
-  `brew install koekeishiya/formulae/yabai`
-
-  `brew install koekeishiya/formulae/skhd`
-
-2. Copy the files `yabairc` to `~/.config/yabai/` and `skhdrc` to `~/.config/skhd`
-
