@@ -122,7 +122,7 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     bindsym $mod+period exec /usr/bin/xpad -t
     
     # Scripts:
-    bindsym $mod+Shift+p exec ~/.dotfiles/spts.sh
+    bindsym $mod+Shift+p exec ~/.dotfiles/scripts/spts.sh
  
 # Moving around:
 #
