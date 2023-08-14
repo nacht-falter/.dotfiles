@@ -88,17 +88,17 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     # bindsym $mod+Shift+e exec swaymsg exit
-    bindsym $mod+Shift+e exec ~/.dotfiles/.config/sway/confirm.sh exit
+    bindsym $mod+Shift+e exec ~/.dotfiles/scripts/confirm.sh exit
 
     # Shutdown/reboot
-    bindsym $mod+Shift+x exec ~/.dotfiles/.config/sway/confirm.sh shutdown
-    bindsym $mod+Shift+r exec ~/.dotfiles/.config/sway/confirm.sh reboot
+    bindsym $mod+Shift+x exec ~/.dotfiles/scripts/confirm.sh shutdown
+    bindsym $mod+Shift+r exec ~/.dotfiles/scripts/confirm.sh reboot
 
     # Locking:
     bindsym $mod+Shift+i exec swaylock -f -c 000000
 
     # Suspend:
-    bindsym $mod+Shift+s exec ~/.dotfiles/.config/sway/confirm.sh suspend 
+    bindsym $mod+Shift+s exec ~/.dotfiles/scripts/confirm.sh suspend
 
 
     # Brightness controls (light needs to be able to with NOPASSWD):
