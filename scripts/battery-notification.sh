@@ -9,6 +9,6 @@ if [ "$percentage" -lt 20 ]; then
     notify-send "Battery Warning" "Battery level low ($percentage%)." --urgency="critical"
 elif [ "$percentage" -lt 50 ]; then
     notify-send "Battery Warning" "Battery half empty ($percentage%)." --urgency="low"
-elif [ "$percentage" -gt 95 ]; then
+elif [ "$percentage" == 100 ]; then
     notify-send "Battery Warning" "Battery full ($percentage%)." --urgency="low"
 fi
