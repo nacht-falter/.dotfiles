@@ -135,11 +135,15 @@ gc{motion} → comment motion → repeat command to undo
 \<prefix>w → show all windows  
 \<prefix>s → show all sessions  
 \<prefix>, → rename tmux window  
-\<C-q> → enter vim copy' mode  
+\<prefix><C-v> → enter vim copy mode  
     kl → move cursor up or down in copy mode  
     v{motion} → select {motion} in copy mode  
     y → copy selected text in copy mode  
     \<C-c> → exit copy mode  
+    \q → exit copy mode  
+\<prefix><C-r> → restore last saved tmux session  
+\<prefix><C-s> → save tmux session  
+\<prefix><C-c> → clear all panes in all windows  
 
 ## obsidian vim bindings
 
@@ -160,7 +164,7 @@ sg → surround with single guillemets
 cmd, → open raycast preferences  
 cmd. → open note  
 
-### window management
+### window management (mac)
 
 \<prefix> = ctrl + cmd  
 \<prefix>key_left → move window to previous desktop  
@@ -169,4 +173,21 @@ cmd. → open note
 \<prefix>key_down → move window to previous display  
 
 ## skhd
-→ refer to .skhdrc for skhd keybinds
+→ refer to .skhdrc for skhd keybinds  
+
+## sway
+### window management
+
+mod+n → go to workspace n  
+shift+mod+n → move window to workspace n  
+shift+mod+space → toggle floating mode  
+mod+e → split mode  
+shift+mod+c → reload sway config  
+
+### other commands
+shift+mod+x → shutdown system  
+shift+mod+e → logout  
+shift+mod+s → suspend  
+shift+mod+i → lock  
+shift+mod+p → open spotify search  
+mod+t → toggle spt playback  
