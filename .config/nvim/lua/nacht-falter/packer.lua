@@ -13,7 +13,7 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
-vim.cmd [[ 
+vim.cmd [[
 augroup packer_user_config
 autocmd!
 autocmd BufWritePost packer.lua source <afile> | PackerSync
@@ -31,7 +31,10 @@ return packer.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+  }
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
@@ -85,6 +88,9 @@ return packer.startup(function(use)
       { 'L3MON4D3/LuaSnip' },
       -- Snippet Collection (Optional)
       { 'rafamadriz/friendly-snippets' },
+      -- react snippets
+      -- { 'SirVer/ultisnips' },
+      -- { 'mlaursen/vim-react-snippets' },
     },
   } -- LSP
 
