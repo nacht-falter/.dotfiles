@@ -109,20 +109,28 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym $mod+Shift+u exec "~/.dotfiles/scripts/sptctl.sh vol up"
+    bindsym $mod+Shift+d exec "~/.dotfiles/scripts/sptctl.sh vol down"
+
 
     # Media Controls:
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
-    bindsym $mod+t exec spt pb -t
-    bindsym $mod+n exec spt pb -n
-    bindsym $mod+p exec spt pb -p
+    bindsym $mod+t exec "~/.dotfiles/scripts/sptctl.sh toggle"
+    bindsym $mod+n exec "~/.dotfiles/scripts/sptctl.sh next"
+    bindsym $mod+p exec "~/.dotfiles/scripts/sptctl.sh prev"
             
     # Apps:
     bindsym $mod+period exec /usr/bin/xpad -t
     
     # Scripts:
     bindsym $mod+Shift+p exec ~/.dotfiles/scripts/spts.sh
+
+    # Screenshots
+    set $date $(date "+%d-%m-%Y_%H-%M-%S")
+    bindsym Print exec grim screenshot_"$date".png
+    bindsym $mod+Print exec slurp | grim -g - screenshot_crop_"$date".png
  
 # Moving around:
 #
@@ -132,10 +140,10 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+    # bindsym $mod+Left focus left
+    # bindsym $mod+Down focus down
+    # bindsym $mod+Up focus up
+    # bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
@@ -167,7 +175,7 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     bindsym $mod+5 workspace $ws5; exec pgrep thunderbird || exec thunderbird
     bindsym $mod+6 workspace $ws6;
     bindsym $mod+7 workspace $ws7; exec pgrep slack exec slack
-    bindsym $mod+8 workspace $ws8; exec pgrep foot || foot -e spt
+    bindsym $mod+8 workspace $ws8; exec pgrep spotify 
     bindsym $mod+9 workspace $ws9; exec pgrep chatgpt-desktop || exec chatgpt-desktop
 
     # Move focused container to workspace
@@ -200,9 +208,11 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     assign [class="thunderbird"] $ws5
     assign [class="Slack"] $ws7
     assign [class="Spotify"] $ws8
-    assign [app_id="foot"] $ws8
     assign [class="ChatGPT Desktop"] $ws9
     for_window [app_id="xpad"] floating enable
+
+exec enpass -minimize
+
 
     # Assign workspaces to outputs
     workspace $ws1 output $external_display1
@@ -273,10 +283,10 @@ mode "resize" {
     bindsym $right resize grow width 10px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    # bindsym Left resize shrink width 10px
+    # bindsym Down resize grow height 10px
+    # bindsym Up resize shrink height 10px
+    # bindsym Right resize grow width 10px
 
     # Return to default mode
     bindsym Return mode "default"
@@ -314,9 +324,10 @@ exec dolphin
 exec obsidian
 exec thunderbird
 exec slack
-exec foot -e spt
+exec spotify 
 exec chatgpt-desktop
 exec xpad
+exec nextcloud --background
 exec swaymsg "workspace 1"
 
 include /etc/sway/config.d/*
