@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 case "$1" in
 shutdown)
 	response=$(echo "" | dmenu -p "Shutdown? y|n")

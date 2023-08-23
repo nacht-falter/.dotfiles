@@ -7,11 +7,11 @@ if [ -z "$1" ]; then
 	if [ -z "$artist" ]; then
 		exit
 	fi
-		album=$(echo "" | dmenu -p "Enter album")
-	else
-		artist=$1
-		album=$2
-	fi
+	album=$(echo "" | dmenu -p "Enter album")
+else
+	artist=$1
+	album=$2
+fi
 if [ -z "$album" ]; then
 	spt p --name "$artist" -a
 else
