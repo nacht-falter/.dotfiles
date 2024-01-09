@@ -32,7 +32,7 @@ set $external_display2 DP-5
 
 output $external_display1 pos 0 0 res 2560x1440 
 output $external_display2 pos 0 0 res 2560x1440 
-output $internal_display scale 1.25 pos 0 1440 res 2560x1440 
+output $internal_display scale 1.3 pos 0 1440 res 2560x1440 
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -85,21 +85,10 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     # bindsym $mod+Shift+e exec swaymsg exit
-    bindsym $mod+Shift+e exec ~/.dotfiles/scripts/confirm.sh exit
-
-    # Shutdown/reboot
-    bindsym $mod+Shift+x exec ~/.dotfiles/scripts/confirm.sh shutdown
-    bindsym $mod+Shift+r exec ~/.dotfiles/scripts/confirm.sh reboot
-
-    # Locking:
-    bindsym $mod+Shift+i exec swaylock -f -c 000000
-
-    # Suspend:
-    bindsym $mod+Shift+s exec ~/.dotfiles/scripts/confirm.sh suspend
-
+    # Exit Sway (Choose between lock, exit, suspend, reboot, shutdown)
+    bindsym $mod+Shift+e exec ~/.dotfiles/scripts/confirm.sh
 
     # Brightness controls (light needs to be able to with NOPASSWD):
     bindsym XF86MonBrightnessUp exec sudo light -A 10
@@ -126,12 +115,15 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     
     # Scripts:
     bindsym $mod+Shift+p exec ~/.dotfiles/scripts/spts.sh
+    bindsym $mod+Shift+w exec ~/.dotfiles/scripts/dictionary-lookup.sh
 
     # Screenshots
     set $date $(date "+%d-%m-%Y_%H-%M-%S")
     bindsym Print exec grim screenshot_"$date".png
     bindsym $mod+Print exec slurp | grim -g - screenshot_crop_"$date".png
  
+    # Compose key:
+
 # Moving around:
 #
     # Move your focus around
@@ -189,6 +181,11 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     bindsym $mod+Ctrl+8 move container to workspace $ws8
     bindsym $mod+Ctrl+9 move container to workspace $ws9
 
+    
+    # Move focused workspace to external_display1
+    bindsym $mod+Shift+Ctrl+k move workspace to output up 
+    bindsym $mod+Shift+Ctrl+j move workspace to output down 
+
     # Move to workspace with focused container
     bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
     bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
@@ -206,13 +203,11 @@ output $internal_display scale 1.25 pos 0 1440 res 2560x1440
     assign [app_id="org.kde.dolphin"] $ws3
     assign [class="obsidian"] $ws4
     assign [class="thunderbird"] $ws5
+    assign [app_id="libreoffice*"] $ws6
     assign [class="Slack"] $ws7
     assign [class="Spotify"] $ws8
     assign [class="ChatGPT Desktop"] $ws9
     for_window [app_id="xpad"] floating enable
-
-exec enpass -minimize
-
 
     # Assign workspaces to outputs
     workspace $ws1 output $external_display1
@@ -298,8 +293,9 @@ bindsym $mod+r mode "resize"
 # or input <identifier>
 input "type:keyboard" {
     xkb_layout us,de
-    xkb_options grp:win_space_toggle
+    xkb_options "grp:win_space_toggle,compose:ralt"
 }
+
 #
 # Status Bar:
 #
@@ -315,13 +311,12 @@ bar {
 #        background #323232
 #        inactive_workspace #32323200 #32323200 #5c5c5c
 
-}
+    }
 
 # Stuff to run on start
 exec alacritty -e tmux
 exec firefox
 exec dolphin
-exec obsidian
 exec thunderbird
 exec slack
 exec spotify 
@@ -329,5 +324,7 @@ exec chatgpt-desktop
 exec xpad
 exec nextcloud --background
 exec swaymsg "workspace 1"
+exec_always autotiling
+# Autotiling script from https://github.com/nwg-piotr/autotiling
 
 include /etc/sway/config.d/*
