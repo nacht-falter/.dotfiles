@@ -98,7 +98,7 @@ return packer.startup(function(use)
   use 'onsails/lspkind.nvim'
 
   -- Useful status updates for LSP
-  use { 'j-hui/fidget.nvim', opts = {} }
+  -- use { 'j-hui/fidget.nvim', opts = {} }
 
   -- Additional lua configuration
   use 'folke/neodev.nvim'
@@ -163,6 +163,27 @@ return packer.startup(function(use)
 
   -- git integration
   use 'lewis6991/gitsigns.nvim' -- show line modifications on left hand side
+
+  -- copilot
+  -- use 'github/copilot.vim'
+  use {
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    event = 'InsertEnter',
+    config = function()
+      require('copilot').setup {}
+    end,
+  }
+  use {
+    'zbirenbaum/copilot-cmp',
+    after = { 'copilot.lua' },
+    config = function()
+      require('copilot_cmp').setup {
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      }
+    end,
+  }
 
   if packer_bootstrap then
     require('packer').sync()

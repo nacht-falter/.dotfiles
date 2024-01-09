@@ -12,7 +12,6 @@ opt.scrolloff = 8
 -- Display the current file name in the statusline
 vim.opt.statusline = vim.opt.statusline + ' %f'
 
-
 -- let undotree handle backups
 opt.swapfile = false
 opt.backup = false
@@ -24,8 +23,8 @@ opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 
 -- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
+opt.tabstop = 4 -- 4 spaces for tabs (prettier default)
+opt.shiftwidth = 4 -- 4 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.smartindent = true
@@ -81,18 +80,18 @@ vim.cmd [[
 	    autocmd BufEnter * set foldlevel=20
 	    autocmd BufEnter * highlight Normal ctermbg=none
 	    autocmd BufEnter * highlight Normal guibg=none
-      autocmd BufEnter *.md set wrap
+	    autocmd BufEnter *.md set wrap
 	    autocmd BufEnter *.md set linebreak
 	    autocmd BufEnter *.md set linebreak
-    endif
+	endif
 ]]
 
--- vim.cmd [[
---   augroup htmlFileType
---     autocmd!
---     autocmd BufRead,BufNewFile *.html setfiletype html
---   augroup END
--- ]]
+vim.cmd [[
+  augroup JavaScriptReactFileType
+    autocmd!
+    autocmd BufRead,BufNewFile [A-Z]*.js set filetype=javascriptreact
+  augroup END
+]]
 
 -- Autocommand for Packer to install plugins when packer.lua is saved
 vim.cmd [[
@@ -101,3 +100,5 @@ vim.cmd [[
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
 ]]
+
+vim.g.python3_host_prog = '/usr/bin/python3'
