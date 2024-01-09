@@ -1,31 +1,24 @@
 #!/usr/bin/bash
-case "$1" in
-shutdown)
-	response=$(echo "" | dmenu -p "Shutdown? y|n")
-	if [[ "$response" == "y" ]]; then
-		playerctl pause
-		systemctl poweroff
-	fi
+response=$(echo "" | dmenu -p "Lock (l), Exit (e), Suspend (s), Reboot (r), Shutdown (x)?")
+case "$response" in
+l | L | lock | Lock)
+	playerctl pause
+	swaylock -f -c 000000
 	;;
-reboot)
-	response=$(echo "" | dmenu -p "Reboot? y|n")
-	if [[ "$response" == "y" ]]; then
-		playerctl pause
-		systemctl reboot
-	fi
+e | E | exit | Exit)
+	playerctl pause
+	swaymsg exit
 	;;
-exit)
-	response=$(echo "" | dmenu -p "Exit? y|n")
-	if [[ "$response" == "y" ]]; then
-		playerctl pause
-		swaymsg exit
-	fi
+s | S | suspend | Suspend)
+	playerctl pause
+	systemctl suspend
 	;;
-suspend)
-	response=$(echo "" | dmenu -p "Suspend? y|n")
-	if [[ "$response" == "y" ]]; then
-		playerctl pause
-		systemctl suspend
-	fi
+r | R | reboot | Reboot)
+	playerctl pause
+	systemctl reboot
+	;;
+x | X | shutdown | Shutdown)
+	playerctl pause
+	systemctl poweroff
 	;;
 esac
