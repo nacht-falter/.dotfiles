@@ -5,7 +5,7 @@ notification_timeout=1000
 if [[ "$3" ]]; then
 	step_size="$3"
 else
-	step_size=20
+	step_size=10
 fi
 
 if [[ "$1" == "next" ]] && spt pb -n; then
