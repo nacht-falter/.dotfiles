@@ -1,1 +1,2 @@
-require("nacht-falter")
+require("nacht-falter.core")
+require("nacht-falter.lazy")
