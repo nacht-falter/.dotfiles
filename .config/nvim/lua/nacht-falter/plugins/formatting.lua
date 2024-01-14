@@ -16,7 +16,7 @@ return {
         html = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
-        markdown = { "prettier" },
+        markdown = { "mdformat" },
         lua = { "stylua" },
         python = { "isort", "autopep8" },
         bash = { "shfmt" },
@@ -28,7 +28,7 @@ return {
       },
     }
 
-    vim.keymap.set({ "n", "v" }, "<leader>f", function()
+    vim.keymap.set({ "n", "v" }, "<leader>fo", function()
       conform.format {
         lsp_fallback = true,
         async = false,
