@@ -57,6 +57,12 @@ return {
 
       opts.desc = "Restart LSP"
       keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+      opts.desc = "Start ltex server"
+      keymap.set("n", "<leader>lt", ":LspStart ltex<CR>", opts) -- mapping to start ltex server
+
+      opts.desc = "Stop ltex server"
+      keymap.set("n", "<leader>lx", ":LspStop ltex<CR>", opts) -- mapping to stop ltex servet
     end
 
     -- used to enable autocompletion (assign to every lsp server config)
@@ -149,6 +155,49 @@ return {
     lspconfig["bashls"].setup {
       capabilities = capabilities,
       on_attach = on_attach,
+    }
+
+    lspconfig["ltex"].setup {
+      autostart = false,
+      on_attach =  on_attach,
+      capabilities = capabilities,
+      use_spellfile = false,
+      filetypes = { "latex", "tex", "bib", "markdown", "gitcommit", "text" },
+      settings = {
+        ltex = {
+          enabled = { "latex", "tex", "bib", "markdown" },
+          language = "auto",
+          diagnosticSeverity = "information",
+          sentenceCacheSize = 2000,
+          additionalRules = {
+            enablePickyRules = true,
+            motherTongue = "en",
+          },
+          dictionary = (function()
+            -- For dictionary, search for files in the runtime to have
+            -- and include them as externals the format for them is
+            -- dict/{LANG}.txt
+            --
+            -- Also add dict/default.txt to all of them
+            local files = {}
+            for _, file in ipairs(vim.api.nvim_get_runtime_file("dict/*", true)) do
+              local lang = vim.fn.fnamemodify(file, ":t:r")
+              local fullpath = vim.fs.normalize(file, ":p")
+              files[lang] = { ":" .. fullpath }
+            end
+
+            if files.default then
+              for lang, _ in pairs(files) do
+                if lang ~= "default" then
+                  vim.list_extend(files[lang], files.default)
+                end
+              end
+              files.default = nil
+            end
+            return files
+          end)(),
+        },
+      },
     }
   end,
 }
