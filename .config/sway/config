@@ -75,6 +75,9 @@ output $internal_display scale 1.3 pos 0 1440 res 2560x1440
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    # Start krunner
+    bindsym $mod+Space exec krunner
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -239,8 +242,8 @@ output $internal_display scale 1.3 pos 0 1440 res 2560x1440
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    # Swap focus between the tiling area and the floating area with Shift + Win + Space
+    bindsym Shift+Ctrl+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
