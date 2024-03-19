@@ -11,8 +11,7 @@
 }
 
 window#waybar {
-    background-color: rgba(50, 50, 50, 0.9);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background-color: #222222;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -30,7 +29,6 @@ window#waybar.empty {
 window#waybar.solo {
     background-color: #FFFFFF;
 }
-*/
 
 window#waybar.termite {
     background-color: #3F3F3F;
@@ -40,6 +38,7 @@ window#waybar.chromium {
     background-color: #000000;
     border: none;
 }
+*/
 
 #workspaces button {
     padding: 0 0.4em;
@@ -84,7 +83,7 @@ window#waybar.chromium {
 #mpd {
     padding: 0 10px;
     margin: 6px 3px; 
-    color: #333333;
+    color: #ffffff;
 }
 
 #window,
@@ -103,12 +102,12 @@ window#waybar.chromium {
 }
 
 #clock {
-    background-color: #bbccdd;
+    background-color: #222222;
 }
 
 #battery {
-    background-color: #bbccdd;
-    color: #333333;
+    background-color: #222222;
+    color: #ffffff;
 }
 
 #battery.charging {
@@ -119,7 +118,7 @@ window#waybar.chromium {
 @keyframes blink {
     to {
         background-color: #ffffff;
-        color: #333333;
+        color: #ffffff;
     }
 }
 
@@ -139,7 +138,7 @@ label:focus {
 
 #cpu {
     background-color: #2ecc71;
-    color: #333333;
+    color: #ffffff;
 }
 
 #memory {
@@ -147,11 +146,11 @@ label:focus {
 }
 
 #backlight {
-    background-color: #bbccdd;
+    background-color: #222222;
 }
 
 #network {
-    background-color: #bbccdd;
+    background-color: #222222;
 }
 
 #network.disconnected {
@@ -159,13 +158,13 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #bbccdd;
-    color: #333333;
+    background-color: #222222;
+    color: #ffffff;
 }
 
 #pulseaudio.muted {
-    background-color: #bbccdd;
-    color: #333333;
+    background-color: #222222;
+    color: #ffffff;
 }
 
 #custom-media {
@@ -191,7 +190,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: #222222;
 }
 
 #idle_inhibitor {
@@ -221,8 +220,8 @@ label:focus {
 }
 
 #language {
-    background: #bbccdd;
-    color: #333333;
+    background: #222222;
+    color: #ffffff;
     padding: 0 5px;
     margin: 6px 3px;
     min-width: 16px;
