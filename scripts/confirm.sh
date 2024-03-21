@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-response=$(echo "" | dmenu -p "Lock (l), Exit (e), Suspend (s), Reboot (r), Shutdown (x)?")
+response=$(echo "" | dmenu -p "Lock (l), Exit (e), Suspend (s), Hibernate (h), Reboot (r), Shutdown (x)?")
 case "$response" in
 l | L | lock | Lock)
 	playerctl pause
@@ -12,6 +12,10 @@ e | E | exit | Exit)
 s | S | suspend | Suspend)
 	playerctl pause
 	systemctl suspend
+	;;
+h | H | hibernate | Hibernate)
+	playerctl pause
+	systemctl hibernate
 	;;
 r | R | reboot | Reboot)
 	playerctl pause

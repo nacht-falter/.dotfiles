@@ -4,8 +4,8 @@
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
 export DISPLAY=:0
 
-percentage=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -oP 'percentage:\s*\K\d+')
-discharging=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -q 'discharging' && echo true || echo false)
+percentage=$(cat /sys/class/power_supply/BAT0/capacity)
+discharging=$(grep -q 'Discharging' /sys/class/power_supply/BAT0/status && echo true || echo false)
 
 if [ "$discharging" == true ]; then
 	if [ "$percentage" -lt 20 ]; then
