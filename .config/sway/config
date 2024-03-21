@@ -34,17 +34,20 @@ output $external_display1 pos 0 0 res 2560x1440
 output $external_display2 pos 0 0 res 2560x1440 
 output $internal_display scale 1.3 pos 0 1440 res 2560x1440 
 
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+set $battery_status (cat /sys/class/power_supply/BAT0/status)
+set $battery_capacity (cat /sys/class/power_supply/BAT0/capacity)
 
 ### Idle configuration
-    exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
-          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          timeout 900 'systemctl suspend' \
-          before-sleep 'playerctl pause' \
-          before-sleep 'swaylock -f -c 000000'
-# This will lock your screen after 300 seconds of inactivity, then turn off
+exec swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    timeout 1200 '[ "$battery_status" != Discharging" -a "$battery_capacity" -gt 80 ] && systemctl suspend || systemctl hibernate' \
+    before-sleep 'playerctl pause' \
+    before-sleep 'swaylock -f -c 000000'
+# this will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
@@ -161,6 +164,7 @@ output $internal_display scale 1.3 pos 0 1440 res 2560x1440
     set $ws7 7
     set $ws8 8
     set $ws9 9
+    set $ws10 10
 
     # switch to workspace
     bindsym $mod+1 workspace $ws1; exec pgrep alacritty || exec alacritty -e tmux
@@ -172,6 +176,7 @@ output $internal_display scale 1.3 pos 0 1440 res 2560x1440
     bindsym $mod+7 workspace $ws7; exec pgrep slack exec slack
     bindsym $mod+8 workspace $ws8; exec pgrep spotify 
     bindsym $mod+9 workspace $ws9; exec pgrep chatgpt-desktop || exec chatgpt-desktop
+    bindsym $mod+0 workspace $ws10;
 
     # Move focused container to workspace
     bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -183,6 +188,7 @@ output $internal_display scale 1.3 pos 0 1440 res 2560x1440
     bindsym $mod+Ctrl+7 move container to workspace $ws7
     bindsym $mod+Ctrl+8 move container to workspace $ws8
     bindsym $mod+Ctrl+9 move container to workspace $ws9
+    bindsym $mod+Ctrl+0 move container to workspace $ws10
 
     
     # Move focused workspace to external_display1
@@ -199,10 +205,11 @@ output $internal_display scale 1.3 pos 0 1440 res 2560x1440
     bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
     bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
     bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+    bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
     # Open apps on specific workspaces
     assign [app_id="Alacritty"] $ws1
-    assign [class="firefox"] $ws2
+    assign [app_id="firefox"] $ws2
     assign [app_id="org.kde.dolphin"] $ws3
     assign [class="obsidian"] $ws4
     assign [class="thunderbird"] $ws5
@@ -210,6 +217,7 @@ output $internal_display scale 1.3 pos 0 1440 res 2560x1440
     assign [class="Slack"] $ws7
     assign [class="Spotify"] $ws8
     assign [class="ChatGPT Desktop"] $ws9
+    assign [class="Code"] $ws10
     for_window [app_id="xpad"] floating enable
 
     # Assign workspaces to outputs
@@ -222,6 +230,7 @@ output $internal_display scale 1.3 pos 0 1440 res 2560x1440
     workspace $ws7 output $internal_display
     workspace $ws8 output $internal_display
     workspace $ws9 output $internal_display
+    workspace $ws10 output $external_display
 
 # Layout stuff:
 #
@@ -321,7 +330,7 @@ exec alacritty -e tmux
 exec firefox
 exec dolphin
 exec thunderbird
-exec slack
+# exec slack
 exec spotify 
 exec chatgpt-desktop
 exec xpad
