@@ -1,2 +1,3 @@
 .config/spotifyd/spotifyd.conf
+scripts/connect-vpn.sh
 lazy-lock.json
