@@ -157,9 +157,16 @@ return {
       on_attach = on_attach,
     }
 
+    -- configure clangd server
+    lspconfig["clangd"].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }
+
+    -- configure ltex server for latex, markdown, and text
     lspconfig["ltex"].setup {
       autostart = false,
-      on_attach =  on_attach,
+      on_attach = on_attach,
       capabilities = capabilities,
       use_spellfile = false,
       filetypes = { "latex", "tex", "bib", "markdown", "gitcommit", "text" },

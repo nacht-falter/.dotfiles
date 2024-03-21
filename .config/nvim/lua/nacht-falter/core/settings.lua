@@ -66,8 +66,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Code folding
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- change settings for .md files
 vim.cmd [[

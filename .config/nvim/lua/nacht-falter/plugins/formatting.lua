@@ -20,6 +20,7 @@ return {
         lua = { "stylua" },
         python = { "isort", "autopep8" },
         sh = { "shfmt" },
+        cpp = { "clang_format" },
       },
       -- format_on_save = {
       --   lsp_fallback = true,
