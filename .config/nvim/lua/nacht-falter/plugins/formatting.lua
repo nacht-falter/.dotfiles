@@ -21,6 +21,7 @@ return {
         python = { "isort", "autopep8" },
         sh = { "shfmt" },
         cpp = { "clang_format" },
+        php = { "phpcbf" },
       },
       -- format_on_save = {
       --   lsp_fallback = true,

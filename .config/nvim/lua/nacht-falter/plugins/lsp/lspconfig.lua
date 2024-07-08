@@ -128,6 +128,18 @@ return {
     lspconfig["pylsp"].setup {
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        pylsp = {
+          plugins = {
+            pyflakes = { enabled = false },
+            black = { enabled = false },
+            autopep8 = { enabled = false },
+            yapf = { enabled = false },
+            pylint = { enabled = false },
+            pycodestyle = { enabled = false },
+          },
+        },
+      },
     }
 
     -- configure lua server (with special settings)
@@ -205,6 +217,12 @@ return {
           end)(),
         },
       },
+    }
+
+    -- configure php server
+    lspconfig["intelephense"].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
     }
   end,
 }
