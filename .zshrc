@@ -116,4 +116,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/Cellar/pandoc-crossref/0.3.15.0/bin/pandoc-crossref:$PATH"
-export PATH="/Users/johannes/Library/Python/3.10/lib/python/site-packages:$PATH"
+
+# bun completions
+[ -s "/home/johannes/.bun/_bun" ] && source "/home/johannes/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
