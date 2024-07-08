@@ -18,7 +18,8 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu -m 0 | xargs swaymsg exec --
+set $menu bemenu-run | xargs swaymsg exec
 
 ### Output configuration
 #
@@ -102,6 +103,7 @@ exec swayidle -w \
 
     # Volume Controls:
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym $mod+Shift+u exec "~/.dotfiles/scripts/sptctl.sh vol up"
@@ -122,6 +124,7 @@ exec swayidle -w \
     # Scripts:
     bindsym $mod+Shift+p exec ~/.dotfiles/scripts/spts.sh
     bindsym $mod+Shift+w exec ~/.dotfiles/scripts/dictionary-lookup.sh
+    bindsym $mod+Shift+v exec foot -e ~/.dotfiles/scripts/connect-vpn.sh && swaymsg reload && exit
 
     # Screenshots
     set $date $(date "+%d-%m-%Y_%H-%M-%S")
@@ -175,7 +178,7 @@ exec swayidle -w \
     bindsym $mod+6 workspace $ws6;
     bindsym $mod+7 workspace $ws7; exec pgrep slack exec slack
     bindsym $mod+8 workspace $ws8; exec pgrep spotify 
-    bindsym $mod+9 workspace $ws9; exec pgrep chatgpt-desktop || exec chatgpt-desktop
+    bindsym $mod+9 workspace $ws9; exec pgrep chatgpt || exec chatgpt
     bindsym $mod+0 workspace $ws10;
 
     # Move focused container to workspace
@@ -216,7 +219,7 @@ exec swayidle -w \
     assign [app_id="libreoffice*"] $ws6
     assign [class="Slack"] $ws7
     assign [class="Spotify"] $ws8
-    assign [class="ChatGPT Desktop"] $ws9
+    assign [app_id="chat-gpt"] $ws9
     assign [class="Code"] $ws10
     for_window [app_id="xpad"] floating enable
 
@@ -332,7 +335,7 @@ exec dolphin
 exec thunderbird
 # exec slack
 exec spotify 
-exec chatgpt-desktop
+exec chatgpt
 exec xpad
 exec nextcloud --background
 exec swaymsg "workspace 1"
