@@ -1,17 +1,17 @@
 #!/bin/bash
 # A little wrapper script for spotify-tui
 # Can be executed from command line with artist and album arguments
-# If no arguments are provided, dmenu is used to get arguments
+# If no arguments are provided, bemenu is used to get arguments
 
 notification_timeout=2000
 
-# Get artist and album from command line arguments or dmenu
+# Get artist and album from command line arguments or bemenu
 if [ -z "$1" ]; then
-	artist=$(echo "" | dmenu -p "Enter artist")
+	artist=$(echo "" | bemenu -p "Enter artist")
 	if [ -z "$artist" ]; then
 		exit
 	fi
-	album=$(echo "" | dmenu -p "Enter album")
+	album=$(echo "" | bemenu -p "Enter album")
 else
 	artist="$1"
 	album="$2"

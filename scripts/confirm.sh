@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-response=$(echo "" | dmenu -p "Lock (l), Exit (e), Suspend (s), Hibernate (h), Reboot (r), Shutdown (x)?")
+response=$(echo "" | bemenu -p "Lock (l), Exit (e), Suspend (s), Hibernate (h), Reboot (r), Shutdown (x)?")
 case "$response" in
 l | L | lock | Lock)
 	playerctl pause
