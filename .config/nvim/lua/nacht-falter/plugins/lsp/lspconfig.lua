@@ -69,7 +69,6 @@ return {
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
@@ -100,23 +99,6 @@ return {
       on_attach = on_attach,
     }
 
-    -- -- configure svelte server
-    -- lspconfig["svelte"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = function(client, bufnr)
-    --     on_attach(client, bufnr)
-    --
-    --     vim.api.nvim_create_autocmd("BufWritePost", {
-    --       pattern = { "*.js", "*.ts" },
-    --       callback = function(ctx)
-    --         if client.name == "svelte" then
-    --           client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-    --         end
-    --       end,
-    --     })
-    --   end,
-    -- })
-
     -- configure emmet language server
     lspconfig["emmet_ls"].setup {
       capabilities = capabilities,
@@ -125,18 +107,15 @@ return {
     }
 
     -- configure python server
-    lspconfig["pylsp"].setup {
+    lspconfig["pyright"].setup {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
-        pylsp = {
-          plugins = {
-            pyflakes = { enabled = false },
-            black = { enabled = false },
-            autopep8 = { enabled = false },
-            yapf = { enabled = false },
-            pylint = { enabled = false },
-            pycodestyle = { enabled = false },
+        python = {
+          analysis = {
+            autoSearchPaths = true,
+            useLibraryCodeForTypes = true,
+            pythonPath = "/usr/bin/python3",
           },
         },
       },

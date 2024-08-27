@@ -5,22 +5,21 @@ return {
   event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
   config = function()
     local conform = require "conform"
+    local fidget = require "fidget"
 
     conform.setup {
       formatters_by_ft = {
-        javascript = { { "prettierd", "prettier" } },
-        typescript = { { "prettierd", "prettier" } },
-        javascriptreact = { { "prettierd", "prettier" } },
-        typescriptreact = { { "prettierd", "prettier" } },
-        css = { { "prettierd", "prettier" } },
-        html = { { "prettierd", "prettier" } },
-        json = { { "prettierd", "prettier" } },
-        yaml = { { "prettierd", "prettier" } },
-        markdown = { "mdformat" },
+        javascript = { "prettierd", "prettier" },
+        typescript = { "prettierd", "prettier" },
+        javascriptreact = { "prettierd", "prettier" },
+        typescriptreact = { "prettierd", "prettier" },
+        css = { "prettierd", "prettier" },
+        html = { "prettierd", "prettier" },
+        json = { "prettierd", "prettier" },
+        yaml = { "prettierd", "prettier" },
         lua = { "stylua" },
-        python = { "isort", "autopep8" },
+        python = { "autoflake", "isort", "autopep8" },
         sh = { "shfmt" },
-        cpp = { "clang_format" },
         php = { "phpcbf" },
       },
       -- format_on_save = {
@@ -36,6 +35,7 @@ return {
         async = false,
         timeout_ms = 1000,
       }
+      fidget.notify("Formatting done")
     end, { desc = "Format file" })
   end,
 }

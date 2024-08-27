@@ -4,17 +4,16 @@ return {
   event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
   config = function()
     local lint = require "lint"
+    local fidget = require "fidget"
 
     lint.linters_by_ft = {
       javascript = { "eslint_d" },
       typescript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
-      svelte = { "eslint_d" },
       python = { "pylint" },
       bash = { "shellcheck" },
       json = { "jsonlint" },
-      cpp = { "cpplint" },
       php = { "phpcs" },
     }
 
@@ -29,6 +28,7 @@ return {
 
     vim.keymap.set("n", "<leader>l", function()
       lint.try_lint()
+      fidget.notify("Linting done")
     end, { desc = "Trigger linting for current file" })
   end,
 }
