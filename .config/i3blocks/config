@@ -4,6 +4,11 @@
 command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=15
 
+# Focused window title
+[focused-window]
+command=xdotool getactivewindow getwindowname 2> /dev/null | awk '{ if (length($0) > 50) print substr($0, 1, 47) "…"; else print $0 }' || echo "None"
+signal=1
+
 # Volume indicator
 [volume-pipewire]
 label=
