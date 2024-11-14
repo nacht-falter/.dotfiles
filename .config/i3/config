@@ -158,29 +158,29 @@ bindsym $mod+Shift+r restart
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+# mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        # bindsym j resize shrink width 10 px or 10 ppt
+        # bindsym k resize grow height 10 px or 10 ppt
+        # bindsym l resize shrink height 10 px or 10 ppt
+        # bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        # bindsym Left resize shrink width 10 px or 10 ppt
+        # bindsym Down resize grow height 10 px or 10 ppt
+        # bindsym Up resize shrink height 10 px or 10 ppt
+        # bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
+        # bindsym Return mode "default"
+        # bindsym Escape mode "default"
+        # bindsym $mod+r mode "default"
+# }
 
 bindsym $mod+r mode "resize"
 
@@ -195,29 +195,54 @@ bindsym $mod+r mode "resize"
 # MY STUFF
 # --------------------------
 # Set outputs
-set $internal_display eDP-1
-set $external_display DP-5 
-
-exec --no-startup-id xrandr --output $external_display --above $internal_display
-
-# Define the display setup using xrandr
-exec --no-startup-id xrandr --output $external_display --mode 2560x1440 --pos 0x0 --primary
-exec --no-startup-id xrandr --output $internal_display --mode 2048x1152 --pos 0x1440
+exec ~/.dotfiles/scripts/set-outputs.sh
+bindsym $mod+Shift+o exec ~/.dotfiles/scripts/set-outputs.sh
 
 # Set wallpaper
 exec --no-startup-id feh --no-fehbg --bg-fill /usr/share/backgrounds/linuxmint/default_background.jpg
 
+# Set vim direction keys
+set $left h
+set $down j
+set $up k
+set $right l
+
 # Change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# resize window
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left resize shrink width 10 px or 10 ppt
+        bindsym $down resize grow height 10 px or 10 ppt
+        bindsym $up resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 # Split settings
 bindsym $mod+q split toggle
@@ -226,7 +251,7 @@ bindsym $mod+q split toggle
 bindsym $mod+Shift+e exec ~/.dotfiles/scripts/exit-i3.sh
 
 # i3blocks
- bar {
+bar {
         font pango:MesloLGS Nerd Font 10
         # status_command ~/.dotfiles/.config/bumblebee-status/bumblebee-status -m nic disk:root cpu \
         #         memory battery date time pasink pasource \
@@ -244,6 +269,9 @@ bindsym $mod+Shift+e exec ~/.dotfiles/scripts/exit-i3.sh
  bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
  bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 
+# i3 config - Subscribe to window focus changes and send signal to i3blocks
+exec_always --no-startup-id while :; do i3-msg -t subscribe '[ "window" ]' | grep -m 1 focus && pkill -SIGRTMIN+1 i3blocks; done
+
 # Switch keyboard layout
 bindsym Mod4+space exec --no-startup-id ~/.dotfiles/scripts/toggle_kbd_layout.sh
 
@@ -254,6 +282,10 @@ bindsym XF86AudioPrev exec playerctl -p spotify previous && $refresh_i3blocks
 bindsym $mod+Shift+t exec playerctl -p spotify play-pause && $refresh_i3blocks
 bindsym $mod+Shift+n exec playerctl -p spotify next && $refresh_i3blocks
 bindsym $mod+Shift+p exec playerctl -p spotify previous && $refresh_i3blocks
+
+# Screenshots
+bindsym Print exec --no-startup-id maim ~/Pictures/screenshot_$(date +%Y-%m-%d-%H:%M:%S).png && notify-send "Screenshot taken" -t 1000
+bindsym $mod+Print exec --no-startup-id maim -s ~/Pictures/screenshot_$(date +%Y-%m-%d-%H:%M:%S).png && notify-send "Screenshot taken" -t 1000
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -271,20 +303,32 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 default_border pixel 1
 hide_edge_borders smart
 
-#vpn script
+# vpn script
 bindsym $mod+Shift+v exec i3-sensible-terminal -e ~/.dotfiles/scripts/connect-vpn.sh
 
-#ber@linux
+# ber@linux and ber@port-utf8
 bindsym Control+$mod+l exec gnome-terminal -e ~/.dotfiles/scripts/ssh-ber@linux.sh
+bindsym Control+$mod+p exec i3-sensible-terminal -e 'ssh ber@port-utf8'
+
+# local terminal
+bindsym Control+$mod+x exec i3-sensible-terminal
 
 # Keyboard led
-bindsym $mod+Shift+o exec ~/.dotfiles/.config/i3blocks/scripts/key_light/key_light
+bindsym $mod+Shift+b exec ~/.dotfiles/.config/i3blocks/scripts/key_light/key_light
 
 #xpad
 bindsym $mod+period exec xpad -t
 
+# Keybinds to start apps
+bindsym Control+$mod+b exec firefox
+bindsym Shift+Control+$mod+b exec firefox -P "homeoffice"
+bindsym Control+$mod+m exec thunderbird
+
+# Move focused workspace to external_display1
+bindsym $mod+Shift+Ctrl+k move workspace to output up 
+bindsym $mod+Shift+Ctrl+j move workspace to output down 
+
 # Open apps on specific workspaces
-assign [class="firefox"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="obsidian"] $ws4
 assign [class="thunderbird"] $ws5
@@ -293,12 +337,22 @@ assign [class="Spotify"] $ws8
 for_window [class="xpad"] floating enable
 
 # Stuff to run on startup
-exec firefox
-exec thunar
-exec thunderbird
-exec spotify
-exec i3-msg workspace 1
-exec i3-sensible-terminal
+exec --no-startup-id thunar
+exec --no-startup-id thunderbird
+exec --no-startup-id spotify
+exec --no-startup-id i3-sensible-terminal
+
+# Assign workspaces to outputs
+# workspace $ws1 output $external_display
+# workspace $ws2 output $external_display
+# workspace $ws3 output $external_display
+# workspace $ws4 output $external_display
+# workspace $ws5 output $internal_display
+# workspace $ws6 output $internal_display
+# workspace $ws7 output $internal_display
+# workspace $ws8 output $internal_display
+# workspace $ws9 output $internal_display
+# workspace $ws10 output $internal_display
 
 # Autotiling script from https://github.com/nwg-piotr/autotiling
 exec_always --no-startup-id autotiling
